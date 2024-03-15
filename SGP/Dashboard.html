@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="Images/Short_icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+<body>
+    <div class="content-wrapper">
+    <div class="Nav-sidebar">
+        <ul class="Nav-bar">
+            <li> <a href="#" onclick="toggleNav(this)">Dashboard</a></li>
+            <a href="Dashboard.html"><img src="Images/Dashboard_icon-removebg-preview.png" alt="Dashboard Icon" class="dash-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Item List</a></li>
+            <a href="#"><img src="Images/itemlisticon-removebg-preview.png" alt="Item List Icon" class="item-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Reports</a></li>
+            <a href="#"><img src="Images/Report_Icon-removebg-preview.png" alt=" Report Icon" class="report-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Manage Users</a></li>
+            <a href="#"><img src="Images/ManageUsers_Icon-removebg-preview.png" alt="manage users report-icon" class="manageusers-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Previous Bookings</a></li>
+            <a href="#"><img src="Images/Previous_Booking_Icon-removebg-preview.png" alt="Previous booking icon" class="previousbkng-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Manage</a></li>
+            <a href="#"><img src="Images/Manage_Icon-removebg-preview.png" alt="Manage Icon" class="manage-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Alerts</a></li>
+            <a href="#"><img src="Images/Alerts_Icon-removebg-preview.png" alt=" Alerts Icon" class="alert-icon"></a>
+        </ul>
+    </div>
+
+</div>
+
+<div class="westmnstr-logo">
+    <a href="Dashboard.html"><img src="Images/University-Of-Westminster-Logo-png-hd-300x95.png" alt="westminster logo"></a>
+</div>
+
+<div class="top-bar">
+</div>
+
+<div class="line-divider">
+</div>
+
+<h3 class="dashbrd-h3">School Inventory System</h3>
+
+
+<script>
+    function toggleNav(link) {
+        var links = document.querySelectorAll('.Nav-bar li a');
+        links.forEach(function (el) {
+            el.classList.remove('blue-link');
+        });
+        link.classList.add('blue-link');
+    }
+</script>
+</body>
+</html>
