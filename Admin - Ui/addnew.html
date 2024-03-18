@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add New Equipment</title>
+  <link rel="stylesheet" type="text/css" href="addnew.css">
+</head>
+<body>
+  <h2>Add New Equipment</h2>
+
+  <label for="image">Upload Image:</label>
+  <input type="file" id="image" name="image" accept="image/*" required><br>
+  <small>Drag image here or click to browse</small><br><br>
+
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" placeholder="Enter product Name" id="name" name="name" required><br><br>
+
+    <label for="productId">Product ID:</label>
+    <input type="text" placeholder="Enter product ID" id="productId" name="productId" required><br><br>
+
+    <label for="category">Category:</label>
+    <input type="text" placeholder="Select product Category" id="category" name="category" required><br><br>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" placeholder="Enter product Quantity" id="quantity" name="quantity" required><br><br>
+
+    <label for="location">Location:</label>
+    <input type="text" placeholder="Enter product quantity" id="location" name="location" required><br><br>
+
+    <input type="submit" value="Add Equipment">
+    <button type="button" onclick="discardEquipment()">Discard</button>
+  </form>
+
+  <script>
+    function discardEquipment() {
+      // Perform the discard action here
+      alert("Equipment discarded!");
+    }
+  </script>
+</body>
+</html>
