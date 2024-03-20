@@ -1,0 +1,8 @@
+Software Group Project Reference List
+
+https://www.w3schools.com/css/css_navbar_vertical.asp
+https://www.w3schools.com/howto/howto_css_vertical_line.asp
+https://www.w3schools.com/css/css_background_image.asp
+https://www.w3schools.com/howto/howto_css_searchbar.asp
+https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_vertical_gray
+https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_basic_css
