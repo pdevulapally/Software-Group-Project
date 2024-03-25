@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="Images/Short_icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+<body>
+    <div class="content-wrapper">
+    <div class="Nav-sidebar">
+        <ul class="Nav-bar">
+            <li> <a href="#" onclick="toggleNav(this)">Dashboard</a></li>
+            <a href="Dashboard.html"><img src="Images/home.png" alt="Dashboard Icon" class="dash-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Item List</a></li>
+            <a href="#"><img src="Images/itemlist.png" alt="Item List Icon" class="item-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Reports</a></li>
+            <a href="#"><img src="Images/Report.png" alt=" Report Icon" class="report-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Manage Users</a></li>
+            <a href="#"><img src="Images/Manage users.png" alt="manage users report-icon" class="manageusers-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Previous Bookings</a></li>
+            <a href="#"><img src="Images/PreviousBooking.png" alt="Previous booking icon" class="previousbkng-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Manage</a></li>
+            <a href="#"><img src="Images/Manage.png" alt="Manage Icon" class="manage-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Alerts</a></li>
+            <a href="#"><img src="Images/Alert.png" alt=" Alerts Icon" class="alert-icon"></a>
+        </ul>
+    </div>
+
+</div>
+
+<div class="Logout-nav">
+        <ul>
+            <li><a href="#" onclick="toggleNav(this)">Log Out</a></li>
+            <a href="#"><img src="Images/Logout.png" alt="Logout Icon" class="Logout-icon"></a>
+        </ul>
+    </div>
+
+<div class="westmnstr-logo">
+    <a href="Dashboard.html"><img src="Images/Westminster Logo.png" alt="westminster logo"></a>
+</div>
+<div class="top-bar">
+<div class="user-profile">
+        <img id="profilePicture" src="Images/Default user.png" alt="User Profile" class="user-profile-icon" onclick="toggleDropdown()">
+        <div class="dropdown-content" id="dropdownContent">
+            <a href="#">Update Account Information</a>
+            <a href="#">Account Settings</a>
+<div class="search-bar">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search product, Device Type.." name="search">   
+            </form>
+</div>
+</div>
+
+<div class="line-divider">
+</div>
+
+
+<script>
+    function toggleNav(link) {
+        var links = document.querySelectorAll('.Nav-bar li a');
+        links.forEach(function (el) {
+            el.classList.remove('blue-link');
+        });
+        link.classList.add('blue-link');
+    }
+</script>
+</body>
+</html>
