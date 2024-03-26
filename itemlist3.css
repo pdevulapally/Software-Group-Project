@@ -14,7 +14,6 @@ body::after {
   height: 130%;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
 .search-bar {
   width: 100%;
   background-color: white;
@@ -34,6 +33,13 @@ body::after {
 .search-bar button[type="submit"] {
   padding: 4px 8px;
   font-size: 12px;
+}
+.westmnstr-logo{
+ position: fixed;
+ top: 0;
+ left: 0;
+ padding: 20px;
+ z-index: 2;
 }
 
 .westmnstr-logo img{
@@ -178,104 +184,77 @@ body::after {
 }
 
 
-
-.equipment-section {
-  margin-top: 100px;
-  padding: 20px;
-  color: #110202;
-  background-color: rgb(255, 255, 255);
-  border-radius: 1px;
-  margin-left: 300px;
-  margin-right:50px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.equipment-section h2 {
+h1 {
+  margin-top: -10px;
+  text-align: center;
   font-size: 24px;
-  margin-bottom: 20px;
+  font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.equipment-section table {
-  width: 100%;
+table {
+  margin: 50px auto;
   border-collapse: collapse;
-  margin-bottom: 20px;
+  background-color: #fff;
+  width: 50%; /* Increase the width to 100% */
+  height: 500px; /* Increase the height to 400px */
 }
 
-.equipment-section table th,
-.equipment-section table td {
-  padding: 8px;
-  text-align: left;
+table tr td {
+  padding: 30px;
+  margin-bottom:-20px; /* Decrease the margin value to reduce the space */
 }
 
-.equipment-section table th {
-  background-color: #ffffff;
-  color: #353535;
+table tr:not(:first-child) {
+  margin-top: px;
 }
 
-.equipment-section table tbody tr:nth-child(even) {
-  background-color: #ffffff;
+table tr td label {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.action-buttons {
-  margin-bottom: 20px;
+table tr td input[type="date"] {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ccc;
 }
 
-.action-buttons button {
-  margin-right: 10px;
-  padding: 8px 16px;
-  font-size: 14px;
-  background-color: #0b4cd4;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.navigation-buttons button {
-  padding: 8px 16px;
-  font-size: 14px;
+table tr td button {
+  padding: 10px 20px;
   background-color: #0867EC;
+  margin-left:260px;
   color: #fff;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.filter-button{
-  margin-right: 10px;
-  padding: 8px 22px;
-  font-size: 14px;
-  color: black;
-  border-radius: 4px;
-  position: absolute;
-  top: 52px;
-  right: 87px;
-  border-color: gray;
-  cursor: pointer;
-}
-
-.previous-button{
-   margin-right: 10px;
-  padding: 8px 16px;
-  font-size: 14px;
-  background-color: #0b4cd4;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.next-button{
-  margin-right: 10px;
-  padding: 8px 22px;
-  font-size: 14px;
-  color: black;
-  border-radius: 4px;
-  position: absolute;
-  bottom: 306px;
-  right: 58px;
-  border-color: gray;
   cursor: pointer;
   
 }
+
+table tr td button:hover {
+  background-color: #054FCC;
+}
+
+.logout ul {
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .logout li a {
+    display: block;
+    color: gray;
+    padding: 4px 16px;
+    text-decoration: none;
+    font-size: medium;
+    position: relative;
+    bottom: -700px;
+    left: -12px;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 1;
+  }
+  
+  .logout li a.blue-link {
+    color: #0867EC;
+  }
+  

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="Images/Short_icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>item list</title>
+    <link rel="stylesheet" href="generatereport.css">
+</head>
+<body>
+  <div class="search-bar">
+    <input type="text" placeholder="Search product, Device Type.." name="search"> 
+    <img src="images/Frame 42.png" alt="Small Picture" class="small-picture">
+</div>
+      <div class="line-divider">
+      </div>
+      
+    <div class="content-wrapper">
+    <div class="Nav-sidebar">
+        <ul class="Nav-bar">
+            <li> <a href="#" onclick="toggleNav(this)">Dashboard</a></li>
+            <a href="Dashboard.html"><img src="Images/home.png" alt="Dashboard Icon" class="dash-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Item List</a></li>
+            <a href="#"><img src="Images/itemlist.png" alt="Item List Icon" class="item-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Reports</a></li>
+            <a href="#"><img src="Images/Report.png" alt=" Report Icon" class="report-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Manage Users</a></li>
+            <a href="#"><img src="Images/Manage users.png" alt="manage users report-icon" class="manageusers-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Previous Bookings</a></li>
+            <a href="#"><img src="Images/PreviousBooking.png" alt="Previous booking icon" class="previousbkng-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Manage</a></li>
+            <a href="#"><img src="Images/Manage.png" alt="Manage Icon" class="manage-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Alerts</a></li>
+            <a href="#"><img src="Images/Alert.png" alt=" Alerts Icon" class="alert-icon"></a>
+        </ul>
+    </div>
+
+</div>
+
+
+
+
+<div class="westmnstr-logo">
+    <a href="Dashboard.html"><img src="Images/Westminster Logo.png" alt="westminster logo"></a>
+</div>
+
+<div class="Logout-nav">
+  <ul>
+      <li><a href="#" onclick="toggleNav(this)">Log Out</a></li>
+      <a href="#"><img src="Images/Logout.png" alt="Logout Icon" class="Logout-icon"></a>
+  </ul>
+</div>
+      
+    
+    
+    <table>
+        <tr>
+          <td colspan="2">
+            <h1>Generate Report</h1>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="start-date">Start Date:</label></td>
+          <td><input type="date" id="start-date"></td>
+        </tr>
+        <tr>
+          <td><label for="end-date">End Date:</label></td>
+          <td><input type="date" id="end-date"></td>
+        </tr>
+        <tr>
+          <td colspan="2"><button onclick="generateReport()">Generate</button></td>
+        </tr>
+      </table>
+
+    <script>
+      function generateReport() {
+        var startDate = document.getElementById("start-date").value;
+        var endDate = document.getElementById("end-date").value;
+        
+        // Perform report generation logic using the start date and end date
+        
+        // Example: Displaying the selected dates
+        alert("Generating report from " + startDate + " to " + endDate);
+      }
+    </script>
+
+<script>
+  function toggleNav(link) {
+      var links = document.querySelectorAll('.Nav-bar li a');
+      links.forEach(function (el) {
+          el.classList.remove('blue-link');
+      });
+      link.classList.add('blue-link');
+  }
+</script>
+</body>
+</html>
