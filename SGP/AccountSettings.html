@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="Images/Short_icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="AccountSettings.css">
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="Nav-sidebar">
+            <ul class="Nav-bar">
+                <li><a href="Dashboard.html" onclick="toggleNav(this)">Dashboard</a></li>
+                <a href="Dashboard.html"><img src="Images/home.png" alt="Dashboard Icon" class="dash-icon"></a>
+                <li><a href="#" onclick="toggleNav(this)">Item List</a></li>
+                <a href="#"><img src="Images/itemlist.png" alt="Item List Icon" class="item-icon"></a>
+                <li><a href="#" onclick="toggleNav(this)">Reports</a></li>
+                <a href="#"><img src="Images/Report.png" alt="Report Icon" class="report-icon"></a>
+                <li><a href="#" onclick="toggleNav(this)">Manage Users</a></li>
+                <a href="#"><img src="Images/Manage users.png" alt="Manage Users Icon" class="manageusers-icon"></a>
+                <li><a href="#" onclick="toggleNav(this)">Previous Bookings</a></li>
+                <a href="#"><img src="Images/PreviousBooking.png" alt="Previous Booking Icon" class="previousbkng-icon"></a>
+                <li><a href="#" onclick="toggleNav(this)">Manage</a></li>
+                <a href="#"><img src="Images/Manage.png" alt="Manage Icon" class="manage-icon"></a>
+                <li><a href="Alerts.html" onclick="toggleNav(this)">Alerts</a></li>
+                <a href="Alerts.html"><img src="Images/Alert.png" alt="Alerts Icon" class="alert-icon"></a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="Logout-nav">
+        <ul>
+            <li><a href="#" onclick="toggleNav(this)">Log Out</a></li>
+            <a href="#"><img src="Images/Logout.png" alt="Logout Icon" class="Logout-icon"></a>
+        </ul>
+    </div>
+
+    <div class="westmnstr-logo">
+        <a href="Dashboard.html"><img src="Images/Westminster Logo.png" alt="Westminster Logo"></a>
+    </div>
+    
+    <div class="top-bar">
+    </div>
+
+    <div class="dropdown">
+        <img src="images/DefaultUser.png" alt="User Profile">
+        <div class="dropdown-content">
+            <a href="AdminLogin.html">Login</a>
+            <a href="#">Account Settings</a>
+            <a href="#">Update Information</a>
+        </div>
+    </div>
+
+    <div class="line-divider"></div>
+
+    <div class="main-content-wrapper">
+        <h1 class="AccountSettings-h1">Account Settings</h1>
+       
+        <div class="AccountSettings-container1">
+            <h2>Change Account Details</h2>
+            <p>Here you can change your account information.</p>
+            <div class="edit-mode">
+                <form method="post" action="{% url 'save_changes' %}">
+        <!--<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">-->
+                    <input type="text" name="first_name" placeholder="Enter First Name">
+                    <input type="text" name="last_name" placeholder="Enter Last Name">
+                    <input type="email" name="email" placeholder="Enter Email Address">
+                    <button type="submit" class="SaveChanges">Save Changes</button>
+                    <button type="button" class="CancelEdit" onclick="cancelEdit()">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for toggling edit mode -->
+    
+
+</body>
+</html>
