@@ -1,0 +1,390 @@
+body {
+    width: auto;
+    background-color: #F0F1F3;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .westmnstr-logo{
+   position: fixed;
+   top: 0;
+   left: 0;
+   padding: 20px;
+   z-index: 2;
+  }
+  
+  .westmnstr-logo img{
+      width: 150px;
+      height: auto;
+      position: relative;
+      top: -15px;
+  }
+  
+  .dashbrd-h3{
+      font-family: Arial, Helvetica, sans-serif;
+      z-index: 2;  
+      position: fixed;
+      right: 1036px;
+      bottom: 490px;
+      white-space: nowrap;
+  }
+  
+  
+  .Nav-sidebar {
+    width: 223px;
+    height: 100%;
+    background-color: white;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    overflow-x: hidden;
+    margin-bottom: 0;
+  }
+  
+  .Nav-bar ul {
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .Nav-bar li a {
+    display: block;
+    color: gray;
+    padding: 1px 16px;
+    text-decoration: none;
+    font-size: medium;
+    position: relative;
+    bottom: -104px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .Nav-bar li a.blue-link {
+    color: #0867EC;
+  }
+  
+  
+    .dash-icon{
+      position: relative;
+      top: 81px;
+      left: -23px;
+      width: 24px;
+      height: auto;
+    }
+  
+    .item-icon{
+      position: relative;
+      top: 78px;
+      left: -26px;
+      width: 30px;
+      height: auto;
+    }
+  
+    .report-icon{
+      position: relative;
+      top: 79px;
+      left: -23px;
+      width: 26px;
+      height: auto;
+    }
+  
+    .manage-icon{
+      position: relative;
+      top: 72px;
+      left: -30px;
+      width: 36px;
+      height: auto;
+    }
+  
+    .manageusers-icon{
+      position: relative;
+      top: 77px;
+      left: -26px;
+      width: 30px;
+      height: auto;
+    }
+  
+    .previousbkng-icon{
+      position: relative;
+      top: 74px;
+      left: -27px;
+      width: 30px;
+      height: auto;
+    }
+  
+    .alert-icon{
+      position: relative;
+      top: 75px;
+      left: -27px;
+      width: 30px;
+      height: auto;
+    }
+  
+    .Logout-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 223px; 
+      background-color: white;
+      z-index: 1;
+  }
+  
+  .Logout-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+  
+  .Logout-nav li {
+      display: block;
+      padding: 10px;
+  }
+  
+  .Logout-nav li a {
+      color: #F31919;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      position: relative;
+      text-decoration: none;
+      right: -43px;
+      bottom: -28px;
+  }
+   
+  .Logout-icon{
+    position: relative;
+    top: -3px;
+    right: -17px;
+  }
+  
+  .top-bar{
+      width: 100%;
+      height: 60px;
+      background-color:white;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      right: 0px;
+      overflow-y: hidden;
+  }
+  
+  .search-bar {
+    width: calc(100% - 223px - 20px); /* Adjust width to account for the width of Nav-sidebar and padding of top-bar */
+    background-color: white;
+    padding: 14px;
+    position: fixed;
+    top: 0;
+    left: 223px;
+    z-index: 3;
+  }
+  
+  .search-bar input[type=text] {
+    width: 808px; 
+    padding: 8px;
+    border: 1px solid black;
+  }
+  
+  
+  .dropdown {
+    position: absolute;
+    top: 0;
+    right: 525px;
+    margin-top: 10px; 
+    margin-right: 10px; 
+  }
+  
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    white-space: nowrap; 
+    display: block;
+  }
+  
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown img {
+    border-radius: 50%;
+  }
+  
+  
+  .line-divider {
+    position: fixed;
+    top: 0;
+    left: 223px; 
+    width: 1px; 
+    height: 11%; 
+    background-color: #ccc; 
+    z-index: 3; 
+  }
+  
+  .Nav-bar li a.blue-link img {
+    filter: brightness(0.7); 
+  }
+  
+  .main-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .white-container {
+    background-color: white;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+  }
+  
+  .container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+ 
+
+.Action1 {
+    background-color: #0867EC;
+    color: white;
+    border: none;
+    padding: 7px 20px; 
+    font-size: 16px;
+    cursor: pointer; 
+    border-radius: 5px; 
+}
+.AccountSettings-container1 {
+    background-color: #f9f9f9;
+    padding: 20px;
+    width: 700px;
+    height: 342px;
+    margin: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.AccountSettings-container1 h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+
+.AccountSettings-container p {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.Action1 {
+    background-color: #0867EC;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Input fields */
+input[type="text"] {
+    width: 48%; /* Adjust the width as needed */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#emailInput {
+   position: relative;
+   width: 96%;
+   left: -2px;
+}
+
+.SaveChanges {
+    background-color: #0867EC;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    position: relative;
+    bottom: -46px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.CancelEdit {
+    background-color: #0867EC;
+    color: white;
+    border: none;
+    position: relative;
+    bottom: -46px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.CancelEdit:hover {
+    background-color: #0651c9;
+}
+
+.SaveChanges:hover {
+    background-color: #0651c9;
+}
+
+.Action1:hover {
+    background-color: #0651c9;
+}
+
+.profilepic-dropdown{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.AccountSettings-h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    position: relative;
+    top: -185px;
+    left: -120px;
+}
