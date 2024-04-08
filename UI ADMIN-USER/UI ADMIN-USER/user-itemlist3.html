@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="Images/Short_icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item list</title>
+    <link rel="stylesheet" href="user-itemlist3.css">
+</head>
+<body>
+    <div class="content-wrapper">
+    <div class="Nav-sidebar">
+       <ul class="Nav-bar">
+            <li> <a href="Dashboard.html" onclick="toggleNav(this)">Dashboard</a></li>
+            <a href="Dashboard.html"><img src="Images/home.png" alt="Dashboard Icon" class="dash-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Item List</a></li>
+            <a href="#"><img src="Images/itemlist.png" alt="Item List Icon" class="item-icon"></a>
+			
+            <li> <a href="#" onclick="toggleNav(this)">Return Equipment</a></li>
+            <a href="#"><img src="Images/Report.png" alt=" Return Icon" class="report-icon"></a>
+			  <li> <a href="Alerts.html" onclick="toggleNav(this)">Alerts</a></li>
+            <a href="Alerts.html"><img src="Images/Alert.png" alt=" Alerts Icon" class="alert-icon"></a>
+           
+            <li> <a href="#" onclick="toggleNav(this)">Previous Bookings</a></li>
+            <a href="#"><img src="Images/PreviousBooking.png" alt="Previous booking icon" class="previousbkng-icon"></a>
+           
+          
+        </ul>
+    </div>
+
+</div>
+
+<div class="Logout-nav">
+        <ul>
+            <li><a href="#" onclick="toggleNav(this)">Log Out</a></li>
+            <a href="#"><img src="Images/Logout.png" alt="Logout Icon" class="Logout-icon"></a>
+        </ul>
+    </div>
+
+<div class="westmnstr-logo">
+    <a href="Dashboard.html"><img src="Images/Westminster Logo.png" alt="westminster logo"></a>
+</div>
+<div class="top-bar">
+    <div class="search-bar">
+        <form action="/action_page.php">
+            <input type="text" placeholder="Search product, Device Type.." name="search">  
+        </form>
+    </div>
+</div>
+
+<div class="dropdown">
+    <img src="images/DefaultUser.png" alt="User-profile">
+    <div class="dropdown-content">
+        <a href="AdminLogin.html">Login</a>
+        <a href="#">Account Settings</a>
+        <a href="#">Update Information</a>
+    </div>
+</div>
+
+
+<div class="line-divider">
+</div>
+
+   <section class="equipment-section">
+    <h5>Overview</h5>
+  
+    </div>
+    <table>
+        <tr>
+            <th class="overview-header" colspan="2">Overview</th>
+        </tr>
+        <tr>
+            <th style="font-size: 20px; color: black;" colspan="2">Primary Details</th>
+        </tr>
+        <tr>
+            <td>Equipment Name</td>
+            <td>Gigabyte Aero15 1070 (E-N5110-PC-A1)</td>
+            <td><img src="Images/product-picture.png" alt="Product Image" style="width: 90px; height: 60px;"></td>
+        </tr>
+        <tr>
+            <td>Device Serial</td>
+            <td>456567</td>
+        </tr>
+        <tr>
+            <td>Equipment category</td>
+            <td>Laptop</td>
+        </tr>
+        <tr>
+            <td>CPU</td>
+            <td>I7-7700HQ</td>
+        </tr>
+    </table>
+	
+</section>
+	<div class="reserve-buttons">
+    <button class="reserve">Apply for reservation</button>
+</div>
+
+
+</body>
+</html>
