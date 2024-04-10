@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="Images/Short_icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>item list</title>
+    <link rel="stylesheet" href="user-itemlist.css">
+</head>
+<body>
+    <div class="content-wrapper">
+    <div class="Nav-sidebar">
+        <ul class="Nav-bar">
+            <li> <a href="Dashboard.html" onclick="toggleNav(this)">Dashboard</a></li>
+            <a href="Dashboard.html"><img src="Images/home.png" alt="Dashboard Icon" class="dash-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Item List</a></li>
+            <a href="#"><img src="Images/itemlist.png" alt="Item List Icon" class="item-icon"></a>
+			
+            <li> <a href="#" onclick="toggleNav(this)">Return Equipment</a></li>
+            <a href="#"><img src="Images/Report.png" alt=" Return Icon" class="return-icon"></a>
+			  <li> <a href="Alerts.html" onclick="toggleNav(this)">Alerts</a></li>
+            <a href="Alerts.html"><img src="Images/Alert.png" alt=" Alerts Icon" class="alert-icon"></a>
+           
+            <li> <a href="#" onclick="toggleNav(this)">Previous Bookings</a></li>
+            <a href="#"><img src="Images/PreviousBooking.png" alt="Previous booking icon" class="previousbkng-icon"></a>
+           
+          
+        </ul>
+    </div>
+
+</div>
+
+<div class="Logout-nav">
+        <ul>
+            <li><a href="#" onclick="toggleNav(this)">Log Out</a></li>
+            <a href="#"><img src="Images/Logout.png" alt="Logout Icon" class="Logout-icon"></a>
+        </ul>
+    </div>
+
+<div class="westmnstr-logo">
+    <a href="Dashboard.html"><img src="Images/Westminster Logo.png" alt="westminster logo"></a>
+</div>
+<div class="top-bar">
+    <div class="search-bar">
+        <form action="/action_page.php">
+            <input type="text" placeholder="Search product, Device Type.." name="search">  
+        </form>
+    </div>
+</div>
+
+<div class="dropdown">
+    <img src="images/DefaultUser.png" alt="User-profile">
+    <div class="dropdown-content">
+        <a href="AdminLogin.html">Login</a>
+        <a href="#">Account Settings</a>
+        <a href="#">Update Information</a>
+    </div>
+</div>
+
+
+ <div class="line-divider"></div>
+
+    
+   
+    <section class="equipment-section">
+    <h2>Equipment</h2>
+    <table>
+            <thead>
+				<tr> 
+<th class="equipment-header">Equipment</th>
+					<div class="action-buttons">
+        <button class="reserve-button">Reserve</button>
+        <button class="cancel-reservation-button">Cancel Reservation</button>
+		 <button class="filter-button">Filter</button>
+				
+    </div>
+				</tr>
+                <tr>
+                    <th></th>
+                    <th>Product</th>
+                    <th>Device Type</th>
+                    <th>Device Serial</th>
+                    <th>CPU</th>
+                    <th>Availability</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="product_1"></td>
+                    <td>Product 1</td>
+                    <td>Device Type 1</td>
+                    <td>Serial 1</td>
+                    <td>CPU 1</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="product[]" value="product_2"></td>
+                    <td>Product 2</td>
+                    <td>Device Type 2</td>
+                    <td>Serial 2</td>
+                    <td>CPU 2</td>
+                    <td>Available</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="product[]" value="product_2"></td>
+                        <td>Product 2</td>
+                        <td>Device Type 2</td>
+                        <td>Serial 2</td>
+                        <td>CPU 2</td>
+                        <td>Available</td>
+                        </tr>
+                        <tr>
+                         <td><input type="checkbox" name="product[]" value="product_3"></td>
+                        <td>Product 2</td>
+                        <td>Device Type 2</td>
+                            <td>Serial 2</td>
+                            <td>CPU 2</td>
+                            <td>Available</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="product[]" value="product_4"></td>
+                                <td>Product 2</td>
+                                <td>Device Type 2</td>
+                                <td>Serial 2</td>
+                                <td>CPU 2</td>
+                                <td>Available</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" name="product[]" value="product_5"></td>
+                                    <td>Product 2</td>
+                                    <td>Device Type 2</td>
+                                    <td>Serial 2</td>
+                                    <td>CPU 2</td>
+                                    <td>Available</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="product[]" value="product_6"></td>
+                                        <td>Product 2</td>
+                                        <td>Device Type 2</td>
+                                        <td>Serial 2</td>
+                                        <td>CPU 2</td>
+                                        <td>Available</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="product[]" value="product_7"></td>
+                                            <td>Product 2</td>
+                                            <td>Device Type 2</td>
+                                            <td>Serial 2</td>
+                                            <td>CPU 2</td>
+                                            <td>Available</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox" name="product[]" value="product_8"></td>
+                                                <td>Product 2</td>
+                                                <td>Device Type 2</td>
+                                                <td>Serial 2</td>
+                                                <td>CPU 2</td>
+                                                <td>Available</td>
+                                                </tr>
+					
+			
+				
+            </tbody>
+        </table>
+		<div class="pagination-buttons">
+        <button class="previous-button">Previous</button>
+        <button class="next-button">Next</button>
+    </div>
+       
+
+    
+</section>
+
+</body>
+</html>

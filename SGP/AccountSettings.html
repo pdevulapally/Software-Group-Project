@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="Images/Short_icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="AccountSettings.css">
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="Nav-sidebar">
+            <ul class="Nav-bar">
+                <li><a href="Dashboard.html" onclick="toggleNav(this)">Dashboard</a></li>
+                <a href="Dashboard.html"><img src="Images/home.png" alt="Dashboard Icon" class="dash-icon"></a>
+                <li><a href="#" onclick="toggleNav(this)">Item List</a></li>
+                <a href="#"><img src="Images/itemlist.png" alt="Item List Icon" class="item-icon"></a>
+                <li><a href="#" onclick="toggleNav(this)">Reports</a></li>
+                <a href="#"><img src="Images/Report.png" alt="Report Icon" class="report-icon"></a>
+                <li><a href="#" onclick="toggleNav(this)">Manage Users</a></li>
+                <a href="#"><img src="Images/Manage users.png" alt="Manage Users Icon" class="manageusers-icon"></a>
+                <li><a href="#" onclick="toggleNav(this)">Previous Bookings</a></li>
+                <a href="#"><img src="Images/PreviousBooking.png" alt="Previous Booking Icon" class="previousbkng-icon"></a>
+                <li><a href="#" onclick="toggleNav(this)">Manage</a></li>
+                <a href="#"><img src="Images/Manage.png" alt="Manage Icon" class="manage-icon"></a>
+                <li><a href="Alerts.html" onclick="toggleNav(this)">Alerts</a></li>
+                <a href="Alerts.html"><img src="Images/Alert.png" alt="Alerts Icon" class="alert-icon"></a>
+            </ul>
+        </div>
+    </div>
+
+    <div class="Logout-nav">
+        <ul>
+            <li><a href="#" onclick="toggleNav(this)">Log Out</a></li>
+            <a href="#"><img src="Images/Logout.png" alt="Logout Icon" class="Logout-icon"></a>
+        </ul>
+    </div>
+
+    <div class="westmnstr-logo">
+        <a href="Dashboard.html"><img src="Images/Westminster Logo.png" alt="Westminster Logo"></a>
+    </div>
+    
+    <div class="top-bar">
+    </div>
+
+    <div class="dropdown">
+        <img src="images/DefaultUser.png" alt="User Profile">
+        <div class="dropdown-content">
+            <a href="AdminLogin.html">Login</a>
+            <a href="#">Account Settings</a>
+            <a href="#">Update Information</a>
+        </div>
+    </div>
+
+    <div class="line-divider"></div>
+
+    <div class="main-content-wrapper">
+       
+        <div class="AccountSettings-container1">
+            <h2 class="Profile-header">Profile Information</h2>
+
+            <div class="current-profile-picture">
+                <img src="images/DefaultUser.png" alt="User Profile">
+            </div>
+
+
+            <div class="profile-buttons">
+                <button class="change-profile-btn" onclick="openUploadDialog()">Change Profile</button>
+                <button class="delete-profile-btn" onclick="deleteProfilePicture()">Delete Profile</button>
+            </div>
+
+          
+            <div id="upload-dialog" class="upload-dialog">
+                <input type="file" accept="image/*" id="profile-picture-upload" style="display:none">
+                <label for="profile-picture-upload" class="upload-label"></label>
+            </div>
+            
+            <div class="edit-mode">
+                <form method="post" action="{% url 'save_changes' %}">
+                    <h2>Contact Information</h2>
+                    <div class="input-container">
+                        <input type="text" name="full_name" placeholder="Enter Full Name">
+                        <input type="text" name="full_name" placeholder="Enter Second Name">
+                    </div>
+                    <input type="text" name="email" placeholder="Enter Email Address">
+                    <input type="text" name="phone_number" placeholder="Enter Phone Number">
+                    <h2>Security Settings</h2>
+                    <a href="#" onclick="changePassword()" class = "Changepswrd">Change Password</a>
+                    <input type="checkbox" name="two_factor_auth"> Two-Factor Authentication<br>
+                    <h2>Notification Preferences</h2>
+                    <input type="checkbox" name="email_notifications"> Email Notifications<br>
+                    <input type="checkbox" name="push_notifications"> Push Notifications<br>
+                    <input type="checkbox" name="sms_notifications"> SMS Notifications<br>
+                    <button type="submit" class="SaveChanges">Save Changes</button>
+                    <button type="button" class="CancelEdit" onclick="cancelEdit()">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+     function openUploadDialog() {
+                    document.getElementById("profile-picture-upload").click();
+                }
+
+                function deleteProfilePicture() {
+                    // Logic to delete the current profile picture
+                }
+    </script>
+</body>
+</html>
