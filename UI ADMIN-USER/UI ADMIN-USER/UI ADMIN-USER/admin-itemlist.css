@@ -1,0 +1,650 @@
+body {
+  width: auto;
+  background-image: url(Images/university-of-westminister-harrow-campus1111-under-construction-harrow-EDEA9D_result.png);
+  background-size: cover;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+body::after {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.search-bar {
+  width: 100%;
+  background-color: white;
+  padding: 14px;
+  position: fixed;
+  top: 0;
+  left: 223px;
+  z-index: 3; 
+}
+
+.search-bar input[type=text] {
+  width: 808px; 
+  padding: 8px;
+  border: 1px solid black;
+}
+
+.search-bar button[type="submit"] {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+.dropdown {
+  position: absolute;
+  top: 0;
+  right: 117px;
+  margin-top: 10px; 
+  margin-right: 10px; 
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  white-space: nowrap; 
+  display: block;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown img {
+  border-radius: 50%;
+}
+.westmnstr-logo{
+ position: fixed;
+ top: 0;
+ left: 0;
+ padding: 20px;
+ z-index: 2;
+}
+
+.westmnstr-logo img{
+    width: 150px;
+    height: auto;
+    position: relative;
+    top: -15px;
+}
+
+.dashbrd-h3{
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 2;  
+    position: fixed;
+    right: 1036px;
+    bottom: 490px;
+    white-space: nowrap;
+}
+
+
+.Nav-sidebar {
+  width: 223px;
+  height: 100%;
+  background-color: white;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  overflow-x: hidden;
+  margin-bottom: 0;
+}
+
+.Nav-bar ul {
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.Nav-bar li a {
+  display: block;
+  color: gray;
+  padding: 1px 16px;
+  text-decoration: none;
+  font-size: medium;
+  position: relative;
+  bottom: -104px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Nav-bar li a.blue-link {
+  color: #0867EC;
+}
+
+
+  .dash-icon{
+    position: relative;
+    top: 81px;
+    left: -23px;
+    width: 24px;
+    height: auto;
+  }
+
+  .item-icon{
+    position: relative;
+    top: 78px;
+    left: -26px;
+    width: 30px;
+    height: auto;
+  }
+
+  .report-icon{
+    position: relative;
+    top: 79px;
+    left: -23px;
+    width: 26px;
+    height: auto;
+  }
+
+  .manage-icon{
+    position: relative;
+    top: 77px;
+    left: -26px;
+    width: 32px;
+    height: 30px;
+  }
+
+  .manageusers-icon{
+    position: relative;
+    top: 76px;
+    left: -26px;
+    width: 33px;
+    height: auto;
+  }
+
+  .previousbkng-icon{
+    position: relative;
+    top: 75px;
+    left: -24px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .alert-icon{
+    position: relative;
+    top: 75px;
+    left: -25px;
+    width: 30px;
+    height: 30px;
+  }
+  
+.top-bar{
+    width: 100%;
+    height: 60px;
+    background-color:white;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    right: 0px;
+    overflow-y: hidden;
+}
+
+.searchbox{
+  float: none;
+  display: block;
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  padding: 14px;
+}
+
+.Logout-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 223px; 
+  background-color: white;
+  z-index: 1;
+}
+
+.Logout-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Logout-nav li {
+  display: block;
+  padding: 10px;
+}
+
+.Logout-nav li a {
+  color: #F31919;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  right: -43px;
+  bottom: -28px;
+}
+
+.Logout-icon{
+position: relative;
+top: -3px;
+right: -17px;
+}
+
+body {
+  width: auto;
+  background-image: url(Images/university-of-westminister-harrow-campus1111-under-construction-harrow-EDEA9D_result.png);
+  background-size: cover;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+body::after {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.search-bar {
+  width: 100%;
+  background-color: white;
+  padding: 14px;
+  position: fixed;
+  top: 0;
+  left: 223px;
+  z-index: 3; 
+}
+
+.search-bar input[type=text] {
+  width: 808px; 
+  padding: 8px;
+  border: 1px solid black;
+}
+
+.search-bar button[type="submit"] {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+.dropdown {
+  position: absolute;
+  top: 0;
+  right: 117px;
+  margin-top: 10px; 
+  margin-right: 10px; 
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  white-space: nowrap; 
+  display: block;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown img {
+  border-radius: 50%;
+}
+.westmnstr-logo{
+ position: fixed;
+ top: 0;
+ left: 0;
+ padding: 20px;
+ z-index: 2;
+}
+
+.westmnstr-logo img{
+    width: 150px;
+    height: auto;
+    position: relative;
+    top: -15px;
+}
+
+.dashbrd-h3{
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 2;  
+    position: fixed;
+    right: 1036px;
+    bottom: 490px;
+    white-space: nowrap;
+}
+
+
+.Nav-sidebar {
+  width: 223px;
+  height: 100%;
+  background-color: white;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  overflow-x: hidden;
+  margin-bottom: 0;
+}
+
+.Nav-bar ul {
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.Nav-bar li a {
+  display: block;
+  color: gray;
+  padding: 1px 16px;
+  text-decoration: none;
+  font-size: medium;
+  position: relative;
+  bottom: -104px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Nav-bar li a.blue-link {
+  color: #0867EC;
+}
+
+
+  .dash-icon{
+    position: relative;
+    top: 81px;
+    left: -23px;
+    width: 24px;
+    height: auto;
+  }
+
+  .item-icon{
+    position: relative;
+    top: 78px;
+    left: -26px;
+    width: 30px;
+    height: auto;
+  }
+
+  .return-icon{
+    position: relative;
+    top: 79px;
+    left: -23px;
+    width: 26px;
+    height: auto;
+  }
+
+
+
+  .previousbkng-icon{
+    position: relative;
+    top: 75px;
+    left: -24px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .alert-icon{
+    position: relative;
+    top: 75px;
+    left: -25px;
+    width: 30px;
+    height: 30px;
+  }
+  
+.top-bar{
+    width: 100%;
+    height: 60px;
+    background-color:white;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    right: 0px;
+    overflow-y: hidden;
+}
+
+.searchbox{
+  float: none;
+  display: block;
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  padding: 14px;
+}
+
+.Logout-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 223px; 
+  background-color: white;
+  z-index: 1;
+}
+
+.Logout-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Logout-nav li {
+  display: block;
+  padding: 10px;
+}
+
+.Logout-nav li a {
+  color: #F31919;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  right: -43px;
+  bottom: -28px;
+}
+
+.Logout-icon{
+position: relative;
+top: -3px;
+right: -17px;
+}
+
+h1 {
+  margin-top: -10px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+  margin: 50px auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  width: 60%; 
+  height: 500px;
+}
+table tr {
+  border-bottom: 1px solid #ccc; /* Add a solid border at the bottom of each table row */
+}
+
+
+table tr td {
+  padding: 10px;
+}
+
+table tr:not(:first-child) {
+  margin-top: px;
+}
+
+table tr td label {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table tr td input[type="date"] {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+table tr td button {
+  padding: 10px 20px;
+  background-color: #0867EC;
+  margin-left:260px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  
+}
+
+table tr td button:hover {
+  background-color: #054FCC;
+}
+
+.logout ul {
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .logout li a {
+    display: block;
+    color: gray;
+    padding: 4px 16px;
+    text-decoration: none;
+    font-size: medium;
+    position: relative;
+    bottom: -700px;
+    left: -12px;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 1;
+  }
+  
+  .logout li a.blue-link {
+    color: #0867EC;
+  }
+.add-item-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.add-item-button:hover {
+  background-color: #45a049;
+}
+.cancel-reservation-button {
+  background-color: #f44336; /* Red */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.cancel-reservation-button:hover {
+  background-color: #da190b;
+}
+.filter-button {
+  background-color: #008CBA; /* Blue */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.filter-button:hover {
+  background-color: #006c84;
+}
+.previous-button {
+  background-color: #555555; /* Gray */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.previous-button:hover {
+  background-color: #444444;
+}
+.next-button {
+  background-color: #555555; /* Gray */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.next-button:hover {
+  background-color: #444444;
+}
+
+  
