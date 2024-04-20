@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="Images/Short_icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous booking</title>
+    <link rel="stylesheet" href="admin-previous booking.css">
+</head>
+<body>
+    <div class="content-wrapper">
+    <div class="Nav-sidebar">
+        <ul class="Nav-bar">
+            <li> <a href="Dashboard.html" onclick="toggleNav(this)">Dashboard</a></li>
+            <a href="Dashboard.html"><img src="Images/home.png" alt="Dashboard Icon" class="dash-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Item List</a></li>
+            <a href="#"><img src="Images/itemlist.png" alt="Item List Icon" class="item-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Reports</a></li>
+            <a href="#"><img src="Images/Report.png" alt=" Report Icon" class="report-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Manage Users</a></li>
+            <a href="#"><img src="Images/Manage users.png" alt="manage users report-icon" class="manageusers-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Previous Bookings</a></li>
+            <a href="#"><img src="Images/PreviousBooking.png" alt="Previous booking icon" class="previousbkng-icon"></a>
+            <li> <a href="#" onclick="toggleNav(this)">Manage</a></li>
+            <a href="#"><img src="Images/Manage.png" alt="Manage Icon" class="manage-icon"></a>
+            <li> <a href="Alerts.html" onclick="toggleNav(this)">Alerts</a></li>
+            <a href="Alerts.html"><img src="Images/Alert.png" alt=" Alerts Icon" class="alert-icon"></a>
+        </ul>
+    </div>
+
+</div>
+
+<div class="Logout-nav">
+        <ul>
+            <li><a href="#" onclick="toggleNav(this)">Log Out</a></li>
+            <a href="#"><img src="Images/Logout.png" alt="Logout Icon" class="Logout-icon"></a>
+        </ul>
+    </div>
+
+<div class="westmnstr-logo">
+    <a href="Dashboard.html"><img src="Images/Westminster Logo.png" alt="westminster logo"></a>
+</div>
+<div class="top-bar">
+    <div class="search-bar">
+        <form action="/action_page.php">
+            <input type="text" placeholder="Search product, Device Type.." name="search">  
+        </form>
+    </div>
+</div>
+
+<div class="dropdown">
+    <img src="images/DefaultUser.png" alt="User-profile">
+    <div class="dropdown-content">
+        <a href="AdminLogin.html">Login</a>
+        <a href="#">Account Settings</a>
+        <a href="#">Update Information</a>
+    </div>
+</div>
+
+
+<div class="line-divider">
+</div>
+
+    
+   
+<section class="equipment-section">
+    <section class="equipment-section">
+        <table>
+            <thead>
+                <tr>
+                    <th class="table-header">Previous Booking</th>
+    
+                  </tr>
+                  <tr>
+                    <th>
+                     
+                      <div class="dropdown1">
+  <button class="filter-but1">Filter &#9662;</button>
+  <div class="dropdown-content1">
+    <a href="#">A-Z</a>
+    <a href="#">Date</a>
+    <a href="#">Newest</a>
+  </div>
+</div>
+                        
+                        
+                    </th>
+                </tr>
+                <tr>
+                    <th>Equipment</th>
+                    <th>Booking ID</th>
+                    <th>Borrowed Date</th>
+                    <th>Returned date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>Number 1</td>
+                    <td>Date</td>
+                    <td>Date</td>
+                    
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Number 2</td>
+                    <td>Date</td>
+                    <td>Date</td>
+                   
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Number 3</td>
+                    <td>Date</td>
+                    <td>Date</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Number 4</td>
+                    <td>Date</td>
+                    <td>Date</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Number 5</td>
+                    <td>Date</td>
+                    <td>Date</td>
+                    
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Number 6</td>
+                   <td>Date</td>
+                    <td>Date</td>
+                    
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Number 7</td>
+                    <td>Date</td>
+                    <td>Date</td>
+                   
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Number 8</td>
+                   <td>Date</td>
+                    <td>Date</td>
+                    
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Number 9</td>
+                    <td>Date</td>
+                    <td>Date</td>
+                    
+                </tr>
+                <th>
+                    <button class="previous-but">Previous</button>
+                    <button class="next-but">Next</button>
+                </th>
+            </tbody>
+        </table>
+        
+    </section>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+  var dropdown = document.querySelector(".dropdown");
+  dropdown.addEventListener("click", function() {
+    this.querySelector(".dropdown-content").classList.toggle("show");
+  });
+});
+	</script>
+</body>
+</html>
