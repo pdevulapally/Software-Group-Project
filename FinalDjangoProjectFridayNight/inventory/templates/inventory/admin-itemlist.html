@@ -16,14 +16,14 @@
         <div class="Nav-sidebar">
             <ul class="Nav-bar">
                 <!-- Repeat this block for each nav item -->
-                <li> <a href="Dashboard.html" onclick="toggleNav(this)">Dashboard</a></li>
-                <a href="Dashboard.html"><img src="{% static 'Images/home.png' %}" alt="Dashboard Icon" class="dash-icon"></a>
+                <li> <a href="{% url 'admin_dashboard'%}" onclick="toggleNav(this)">Dashboard</a></li>
+                <a href="admin_ashboard.html"><img src="{% static 'Images/home.png' %}" alt="Dashboard Icon" class="dash-icon"></a>
                 <li> <a href="#" onclick="toggleNav(this)">Item List</a></li>
                 <a href="#"><img src="{% static 'Images/itemlist.png' %}" alt="Item List Icon" class="item-icon"></a>
-                <li> <a href="#" onclick="toggleNav(this)">Reports</a></li>
-                <a href="#"><img src="{% static 'Images/Report.png' %}" alt=" Report Icon" class="report-icon"></a>
-                <li> <a href="#" onclick="toggleNav(this)">Manage Users</a></li>
-                <a href="#"><img src="{% static 'Images/Manage users.png' %}" alt="manage users report-icon" class="manageusers-icon"></a>
+                <li> <a href="{% url 'generate_reports'%}" onclick="toggleNav(this)">Reports</a></li>
+                <a href="{% url 'generate_reports'%}"><img src="{% static 'Images/Report.png' %}" alt=" Report Icon" class="report-icon"></a>
+                <li> <a href="{% url 'manage_users'%}" onclick="toggleNav(this)">Manage Users</a></li>
+                <a href="{% url 'manage_users'%}"><img src="{% static 'Images/Manage users.png' %}" alt="manage users report-icon" class="manageusers-icon"></a>
                 <li> <a href="#" onclick="toggleNav(this)">Previous Bookings</a></li>
                 <a href="#"><img src="{% static 'Images/PreviousBooking.png' %}" alt="Previous booking icon" class="previousbkng-icon"></a>
                 <li> <a href="#" onclick="toggleNav(this)">Manage</a></li>
@@ -101,17 +101,18 @@
                             {% endfor %}
                         </tbody>
                     </table>
+                    <!-- Pagination Controls -->
+                    <div class="pagination" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);"> <!-- Centers the pagination control -->
+                        {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}" class="previous-button">Previous</a>
+                        {% endif %}
+                        <span class="page-info">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}" class="next-button">Next</a>
+                        {% endif %}
+                    </div>
                 </div>
-                <!-- Pagination Controls -->
-                <div class="pagination" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);"> <!-- Centers the pagination control -->
-                    {% if page_obj.has_previous %}
-                        <a href="?page={{ page_obj.previous_page_number }}" class="previous-button">Previous</a>
-                    {% endif %}
-                    <span class="page-info">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
-                    {% if page_obj.has_next %}
-                        <a href="?page={{ page_obj.next_page_number }}" class="next-button">Next</a>
-                    {% endif %}
-                </div>
+                
             </section>
         </div>
     </div>  

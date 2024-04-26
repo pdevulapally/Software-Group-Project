@@ -1,4 +1,4 @@
-# inventory/models/users.py
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -9,8 +9,9 @@ class Admin(models.Model):
         return f"Admin: {self.user.username}"
 
 class Student(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='student_profile')
-    grade = models.CharField(max_length=10)  # Update the length according to your requirement
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='student_profile')
+    grade = models.CharField(max_length=10)
+    adminApprovalStatus = models.BooleanField(default=False)
 
     def __str__(self):
         return f"Student: {self.user.username}"

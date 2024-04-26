@@ -1,0 +1,81 @@
+body {
+    background-color: black;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh; /* Full height of the viewport */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 0;
+}
+
+h2.Apply-h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: block;
+    width: 400px; /* Adjust width as needed */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 10px;
+}
+
+label {
+    color: rgb(255, 255, 255);
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #1366D9;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #054FCC;
+}
+
+.backtologin {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.backtologin a {
+    color: white;
+    text-decoration: none;
+}
+
+.backtologin img {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.westmnstr-bars2 {
+    position: absolute;
+    left: 100px;
+    top: 145px;
+}
+
+.westmnstr-bars{
+    display: none;
+}

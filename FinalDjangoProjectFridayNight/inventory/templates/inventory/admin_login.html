@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <!-- Make sure to use the static tag to link your favicon -->
+        <link rel="shortcut icon" type="x-icon" href="{% static 'Images/Short_icon.png' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin Login</title>
+        <!-- Use the static tag for CSS files -->
+        <link rel="stylesheet" href="{% static 'css/admin-login.css' %}">
+    </head>
+<body>
+    <h2 class="AdminLogin-h2">Admin Login</h2>
+    <div class="westmnstr-bars">
+        <!-- Use the static tag for image sources -->
+        <img src="{% static 'Images/Westminster Yellow Logo.png' %}" alt="Westminster yellow bars" style="width: 100px;" height="100px">
+    </div>
+    <p class="Login-para">Welcome back! Please enter your details.</p>
+
+
+    <form method="POST" action="{% url 'admin_login' %}">
+        <!-- Add the CSRF token to protect against CSRF attacks -->
+        {% csrf_token %}
+        <label for="username">Email:</label>
+        <input type="text" name="username" id="email" required placeholder="Enter your email">
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required placeholder="Enter your password">
+        <button type="submit">Login</button>
+    </form>
+    
+    <div class="forgot">
+        <a href=#>Forgot password? Contact Admin Department</a>
+    </div>
+
+    <div class="westmnstr-bars2">
+        <img src="{% static 'Images/Westminster Yellow Logo.png'%}" alt="westmnstr-bars2" style="width: 400px; height: 400px;">
+
+    </div>
+    
+</body>
+</html>

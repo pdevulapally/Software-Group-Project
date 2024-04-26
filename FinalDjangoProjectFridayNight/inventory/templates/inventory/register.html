@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'Images/Short_icon.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Account</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+    <div class="backtologin">
+        <a href=#><img src="{% static 'Images/back.png' %}" alt="Back to Login">Back to Login</a>
+    </div>
+    <h2 class="Apply-h2">Apply for an account</h2>
+    <form action="{% url 'register_account' %}" method="post">
+      {% csrf_token %}
+      <label for="FirstName">First Name:</label>
+      <input type="text" name="first_name" id="FirstName" required placeholder="Enter your first name">
+
+      <label for="SecondName">Second Name:</label>
+      <input type="text" name="last_name" id="SecondName" required placeholder="Enter your second name">
+
+      <label for="PhoneNumber">Phone Number:</label>
+      <input type="text" name="phone_number" id="PhoneNumber" required placeholder="Enter your phone number">
+
+      <label for="Email">Login Email:</label>
+      <input type="email" name="email" id="Email" required placeholder="Enter your email">
+
+      <label for="Password">Login Password:</label>
+      <input type="password" name="password" id="Password" required placeholder="Enter your password">
+
+      <label for="role">Role:</label>
+      <select name="role" id="role">
+          <option value="student">Student</option>
+          <option value="staff">Staff</option>
+      </select>
+
+      <label for="grade">Grade (if student):</label>
+      <input type="text" name="grade" id="Grade" placeholder="Enter your grade">
+
+      <label for="department">Department (if staff):</label>
+      <input type="text" name="department" id="Department" placeholder="Enter your department">
+      <button type="submit">Apply</button>
+    </form>
+    
+    <div class="westmnstr-bars2">
+        <img src="{% static 'Images/Westminster Yellow Logo.png' %}" alt="westmnstr-bars2" style="width: 400px; height: 400px;">
+    </div>
+    
+</body>
+</html>
