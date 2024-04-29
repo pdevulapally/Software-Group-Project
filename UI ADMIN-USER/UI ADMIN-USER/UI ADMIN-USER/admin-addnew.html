@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add New Equipment</title>
+  <link rel="stylesheet" type="text/css" href="admin-addnew.css">
+</head>
+<body>
+  <form>
+    <h2>New Equipment</h2>
+
+    <div class="upload-container">
+      <label for="image" class="image-upload-container">
+        <span id="fileText"></span>
+        <div class="image-upload" id="imageUpload"></div>
+      </label>
+      <div class="browse-text">Click here to Upload</div>
+      <input type="file" id="image" name="image" accept="image/*" required onchange="updateFileName(this)">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Product Name:</label>
+      <input type="text" placeholder="Enter product name" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="productId">Product ID:</label>
+      <input type="text" placeholder="Enter product ID" id="productId" name="productId" required>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <input type="text" placeholder="Select product category" id="category" name="category" required>
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Quantity:</label>
+      <input type="number" placeholder="Enter product quantity" id="quantity" name="quantity" required>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <input type="text" placeholder="Enter product location" id="location" name="location" required>
+    </div>
+
+    <div class="button-group">
+      <input type="submit" value="Add Equipment">
+      <button type="button" onclick="discardEquipment()">Discard</button>
+    </div>
+  </form>
+
+  <script>
+    function discardEquipment() {
+      // Perform the discard action here
+      alert("Equipment discarded!");
+    }
+
+    function updateFileName(input) {
+      var fileName = input.files[0].name;
+      var fileText = document.getElementById("fileText");
+      fileText.textContent = fileName;
+    }
+  </script>
+</body>
+</html>
