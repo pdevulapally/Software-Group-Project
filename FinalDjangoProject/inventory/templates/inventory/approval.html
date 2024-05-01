@@ -1,0 +1,21 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %} <!-- Load the static files tag at the beginning of the head section -->
+    <link rel="shortcut icon" type="x-icon" href="{% static 'Images/Short_icon.png' %}"> <!-- Using static tag to include static files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Approval</title>
+    <link rel="stylesheet" href="{% static 'css/approval.css' %}"> <!-- Correctly reference the CSS file using static tags -->
+</head>
+<body>
+    <h2 class="Approval-h2">Admin Approval</h2>
+    <p class="Approval-para">An alert has been sent to the admin, please wait for approval.</p>
+    <div class="waiting">
+        <img src="{% static 'Images/clock.png' %}" alt="Admin approval waiting time" style="width: 315px; height: 315px;"> <!-- Reference to an image using static -->
+    </div>
+    <div class="backtologin">
+        <a href="UsersLogin.html"><img src="{% static 'Images/back.png' %}" alt="Back to Login">Back to Login</a> <!-- Using static tag for images -->
+    </div>
+</body>
+</html>

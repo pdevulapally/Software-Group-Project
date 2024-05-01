@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'Images/Short_icon.png' %}" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts</title>
+    <link rel="stylesheet" href="{% static 'css/admin-alerts.css' %}">
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="Nav-sidebar">
+            <ul class="Nav-bar">
+                <li><a href="{% url 'inventory:admin_dashboard' %}">Dashboard</a></li>
+                <a href="{% url 'inventory:admin_dashboard' %}"><img src="{% static 'Images/home.png' %}" alt="Dashboard Icon" class="dash-icon"></a>
+                <li><a href="{% url 'inventory:admin_item_list' %}">Item List</a></li>
+                <a href="{% url 'inventory:admin_item_list' %}"><img src="{% static 'Images/itemlist.png' %}" alt="Item List Icon" class="item-icon"></a>
+                <li><a href="{% url 'inventory:generate_reports' %}" onclick="toggleNav(this)">Reports</a></li>
+                <a href="{% url 'inventory:generate_reports' %}"><img src="{% static 'Images/Report.png' %}" alt="Report Icon" class="report-icon"></a>
+                <li><a href="{% url 'inventory:manage_users' %}" onclick="toggleNav(this)">Manage Users</a></li>
+                <a href="{% url 'inventory:manage_users' %}"><img src="{% static 'Images/Manage users.png' %}" alt="Manage users icon" class="manageusers-icon"></a>
+                <li><a href=# onclick="toggleNav(this)">Previous Bookings</a></li>
+                <a href=#><img src="{% static 'Images/PreviousBooking.png' %}" alt="Previous booking icon" class="previousbkng-icon"></a>
+                <li><a href=# onclick="toggleNav(this)">Manage</a></li>
+                <a href=#><img src="{% static 'Images/Manage.png' %}" alt="Manage Icon" class="manage-icon"></a>
+                <li><a href="{% url 'inventory:admin_alerts' %}" onclick="toggleNav(this)">Alerts</a></li>
+                <a href="{% url 'inventory:admin_alerts' %}"><img src="{% static 'Images/Alert.png' %}" alt="Alerts Icon" class="alert-icon"></a>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="Logout-nav">
+        <ul>
+            <li><a href=# onclick="toggleNav(this)">Log Out</a></li>
+            <a href=#><img src="{% static 'Images/Logout.png' %}" alt="Logout Icon" class="Logout-icon"></a>
+        </ul>
+    </div>
+
+    <div class="westmnstr-logo">
+        <a href="{% url 'inventory:admin_dashboard' %}"><img src="{% static 'Images/Westminster Logo.png' %}" alt="Westminster logo"></a>
+    </div>
+
+    <div class="top-bar">
+    </div>
+
+    <div class="dropdown">
+        <img src="{% static 'images/DefaultUser.png' %}" alt="User-profile">
+        <div class="dropdown-content">
+            <a href="{% url 'inventory:admin_account_settings' %}">Account Settings</a>
+        </div>
+    </div>
+    <div class="main-content-wrapper" style = "margin-top: 20px;">
+        <h1>Alerts</h1>
+        <div class="alert-content">
+            {% for booking in pending_reservations %}
+            <div class="Alerts-container">
+                <div class="header-container">New Reservation Request</div>
+                <p>Hi Admin,</p>
+                <p>There is a new reservation request from {{ booking.user.username }} for the equipment {{ booking.equipment.device_name }}.</p>
+                <a href="{% url 'inventory:approve_booking' booking.id %}" class="Action">Approve Now</a>
+                <a href="{% url 'inventory:reject_booking' booking.id %}" class="Action Reject">Reject</a>
+            </div>
+            {% empty %}
+            <div class="Alerts-container">No new alerts.</div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

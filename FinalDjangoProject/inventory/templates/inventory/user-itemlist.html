@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="shortcut icon" type="x-icon" href="{% static 'Images/Short_icon.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item List</title>
+    <link rel="stylesheet" href="{% static 'css/user-itemlist.css' %}">
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="Nav-sidebar">
+            <ul class="Nav-bar">
+                <li><a href="{% url 'inventory:user_dashboard_view' %}">Dashboard</a></li>
+                <a href="{% url 'inventory:user_dashboard_view' %}"><img src="{% static 'Images/home.png'%}" alt="Dashboard Icon" class="dash-icon"></a>
+                <li><a href="{% url 'inventory:user_item_list' %}">Item List</a></li>
+                <a href="#"><img src="{% static 'Images/itemlist.png'%}" alt="Item List Icon" class="item-icon"></a>
+                <li> <a href="#" onclick="toggleNav(this)">Return Equipment</a></li>
+                <a href="#"><img src="{% static 'Images/Report.png'%}" alt=" Return Icon" class="return-icon"></a>
+                <li> <a href="Alerts.html" onclick="toggleNav(this)">Alerts</a></li>
+                <a href="Alerts.html"><img src="{% static 'Images/Alert.png'%}" alt=" Alerts Icon" class="alert-icon"></a>
+                <li> <a href="#" onclick="toggleNav(this)">Previous Bookings</a></li>
+                <a href="#"><img src="{% static 'Images/PreviousBooking.png' %}" alt="Previous booking icon" class="previousbkng-icon"></a>
+            
+        </div>
+    </div>
+
+    <div class="Logout-nav">
+        <ul>
+            <li><a href=# onclick="toggleNav(this)">Log Out</a></li>
+            <a href=#><img src="{% static 'Images/Logout.png' %}" alt="Logout Icon" class="Logout-icon"></a>
+        </ul>
+    </div>
+
+    <div class="westmnstr-logo">
+        <a href=#><img src="{% static 'Images/Westminster Logo.png' %}" alt="Westminster logo"></a>
+    </div>
+    <div class="top-bar">
+        
+    </div>
+
+    <div class="dropdown">
+        <img src="{% static 'images/DefaultUser.png' %}" alt="User-profile">
+        <div class="dropdown-content">
+            <a href="{% url 'inventory:custom_login' %}">Login</a>
+            <a href="{% url 'inventory:user_account_settings' %}">Account Settings</a>
+        </div>
+    </div>
+
+    <div class="line-divider"></div>
+
+    <div class="table-box">
+        <section class="equipment-section">
+            <h2>Equipment</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Device Type</th>
+                        <th>Device Serial</th>
+                        <th>CPU</th>
+                        <th>Availability</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for equipment in page_obj %}
+                    <tr>
+                        <td>{{ equipment.device_type }}</td>
+                        <td>{{ equipment.device_serial }}</td>
+                        <td>{{ equipment.CPU }}</td>
+                        <td>{{ equipment.status }}</td>
+                        <td><a href="{% url 'inventory:equipment_details' equipment.id %}">{{ equipment.name }}</a></td>
+                    </tr>
+                    {% empty %}
+                    <tr><td colspan="6">No equipment available.</td></tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </div>
+    
+
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'Images/Short_icon.png' %}" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Reservation Alerts</title>
+    <link rel="stylesheet" href="{% static 'css/user-alerts.css' %}"> <!-- Ensure this CSS is appropriate for user views -->
+    <script>
+        function dismissAlert(alertId) {
+            var alertElement = document.getElementById(alertId);
+            alertElement.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="content-wrapper">
+            <div class="Nav-sidebar">
+                <ul class="Nav-bar">
+                    <li><a href=#>Dashboard</a></li>
+                    <a href="#"><img src="{% static 'Images/home.png'%}" alt="Dashboard Icon" class="dash-icon"></a>
+                    <li><a href="{% url 'inventory:user_item_list' %}">Item List</a></li>
+                    <a href="{% url 'inventory:return_equipment' %}"><img src="{% static 'Images/itemlist.png'%}" alt="Item List Icon" class="item-icon"></a>
+                    <li> <a href="{% url 'inventory:user_alerts' %}" onclick="toggleNav(this)">Alerts</a></li>
+                    <a href="{% url 'inventory:user_alerts' %}"><img src="{% static 'Images/Alert.png'%}" alt=" Alerts Icon" class="alert-icon"></a>
+                    <li> <a href="#" onclick="toggleNav(this)">Previous Bookings</a></li>
+                    <a href="#"><img src="{% static 'Images/PreviousBooking.png' %}" alt="Previous booking icon" class="previousbkng-icon"></a>
+    
+                </ul>
+            </div>
+        </div>
+    
+        <div class="Logout-nav">
+            <ul>
+                <li><a href=# onclick="toggleNav(this)">Log Out</a></li>
+                <a href=#><img src="{% static 'Images/Logout.png' %}" alt="Logout Icon" class="Logout-icon"></a>
+            </ul>
+        </div>
+    
+        <div class="westmnstr-logo">
+            <a href="{% url 'inventory:user_dashboard_view' %}"><img src="{% static 'Images/Westminster Logo.png' %}" alt="Westminster logo"></a>
+        </div>
+    
+        <div class="top-bar">
+        </div>
+    
+        <div class="dropdown">
+            <img src="{% static 'images/DefaultUser.png' %}" alt="User-profile">
+            <div class="dropdown-content">
+                <a href="{% url 'inventory:user_account_settings' %}">Account Settings</a>
+            </div>
+        </div>
+
+        <div class="main-content-wrapper" style="margin-top: 20px;">
+            <h1>Reservation Alerts</h1>
+            <div class="alert-content">
+                {% for booking in approved_reservations %}
+                <div class="Alerts-container" id="alert-{{ booking.id }}">
+                    <div class="header-container">Reservation Approved</div>
+                    <p>Hi {{ request.user.username }},</p>
+                    <p>Your reservation for {{ booking.equipment.device_name }} has been approved.</p>
+                    <p><strong>Due Date:</strong> {{ booking.end_date|date:"DATE_FORMAT" }}</p>
+                    <form method="post" action="{% url 'inventory:user_alerts' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="booking_id" value="{{ booking.id }}">
+                        <button type="submit" name="dismiss">OK</button>
+                    </form>
+                </div>
+                {% empty %}
+                <div class="Alerts-container">No new alerts.</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

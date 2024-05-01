@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="shortcut icon" type="x-icon" href="{% static 'Images/Short_icon.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="{% static 'css/account-settings.css' %}">
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="top-bar">
+
+            
+            <div class="westmnstr-logo">
+                <a href="{% url 'inventory:admin_dashboard' %}">
+                    <img src="{% static 'Images/Westminster Logo.png' %}" alt="Westminster Logo">
+                </a>
+            </div>
+        
+    </div>
+
+    <div class="main-content-wrapper">
+        <div class="AccountSettings-container">
+            <h2 class="Profile-header">Profile Information</h2>
+            <form method="post" action="{% url 'inventory:admin_account_settings' %}">
+                {% csrf_token %}
+                <div class="profile-info-column">
+                    <label>First Name:</label>
+                    <input type="text" name="first_name" placeholder="Enter First Name" value="{{ user.first_name }}" required>
+                    <label>Last Name:</label>
+                    <input type="text" name="last_name" placeholder="Enter Last Name" value="{{ user.last_name }}" required>
+                    <label>Email:</label>
+                    <input type="email" name="email" placeholder="Enter Email Address" value="{{ user.email }}" readonly>
+                    <label>Password:</label>
+                    <input type="password" name="password" placeholder="New Password">
+                    {% if user.student_profile %}
+                    <label>Grade:</label>
+                    <input type="text" name="grade" value="{{ user.student_profile.grade }}" required>
+                    {% elif user.staff_profile %}
+                    <label>Department:</label>
+                    <input type="text" name="department" value="{{ user.staff_profile.department }}" required>
+                    {% endif %}
+                    <button type="submit" class="submit-btn">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.querySelector('.dropdown-content');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="shortcut icon" type="x-icon" href="{% static 'Images/Short_icon.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="{% static 'css/account-settings.css' %}">
+</head>
+<body>
+    <div class="content-wrapper">
+        
+    </div>
+    <script>
+        function toggleNav(link) {
+            var links = document.querySelectorAll('.Nav-bar li a');
+            links.forEach(function (el) {
+                el.classList.remove('blue-link');
+            });
+            link.classList.add('blue-link');
+        }
+    </script>
+</body>
+</html>

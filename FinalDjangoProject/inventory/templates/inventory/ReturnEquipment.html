@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'Images/Short_icon.png' %}" type="x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Equipment</title>
+    <link rel="stylesheet" href="{% static 'css/ReturnEquipment.css' %}">
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="Nav-sidebar">
+            <ul class="Nav-bar">
+                <li><a href="{% url 'inventory:user_dashboard_view' %}">Dashboard</a></li>
+                <img src="{% static 'Images/home.png' %}" alt="Dashboard Icon" class="dash-icon">
+                <li><a href="{% url 'inventory:user_item_list' %}">Item List</a></li>
+                <img src="{% static 'Images/itemlist.png' %}" alt="Item List Icon" class="item-icon">
+                <li><a href="{% url 'inventory:return_equipment' %}">Return Equipment</a></li>
+                <img src="{% static 'Images/Report.png' %}" alt="Report Icon" class="report-icon">
+                <li><a href=#>Previous Bookings</a></li>
+                <img src="{% static 'Images/PreviousBooking.png' %}" alt="Previous booking icon" class="previousbkng-icon">
+                <li><a href=#>Alerts</a></li>
+                <img src="{% static 'Images/Alert.png' %}" alt="Alerts Icon" class="alert-icon">
+            </ul>
+        </div>
+
+        <div class="top-bar"></div>
+
+        <div class="Logout-nav">
+            <ul>
+                <li><a href=#>Log Out</a></li>
+                <img src="{% static 'Images/Logout.png' %}" alt="Logout Icon" class="Logout-icon">
+            </ul>
+        </div>
+
+        <div class="westmnstr-logo">
+            <a href="{% url 'inventory:user_dashboard_view' %}">
+                <img src="{% static 'Images/Westminster Logo.png' %}" alt="Westminster logo">
+            </a>
+        </div>
+
+        <div class="main-content-wrapper">
+            <div class="return-equipment-box">
+                <div class="return-equipment-container">
+                    <h2>Return Equipment</h2>
+                    {% for item in reserved_items %}
+                    <div class="return-item">
+                        <div class="item-left">
+                            <img src="{% static item.equipment.image_url %}" alt="{{ item.equipment.name }}" style="width: 144px;" height="100px">
+                        </div>
+                        <div class="item-middle">
+                            <p>{{ item.equipment.name }}</p>
+                        </div>
+                        <div class="item-right">
+                            <form action="{% url 'inventory:return_equipment' %}" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="booking_id" value="{{ item.id }}">
+                                <button type="submit">Return</button>
+                            </form>                         
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p>No items to return.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <img src="{% static 'images/DefaultUser.png' %}" alt="User-profile">
+            <div class="dropdown-content">
+                <a href="{% url 'inventory:user_account_settings' %}">Account Settings</a>
+            </div>
+        </div>
+
+        <div class="line-divider"></div>
+    </div>
+
+    <script>
+        function toggleNav(link) {
+            var links = document.querySelectorAll('.Nav-bar li a');
+            links.forEach(function (el) {
+                el.classList.remove('blue-link');
+            });
+            link.classList.add('blue-link');
+        }
+    </script>
+</body>
+</html>

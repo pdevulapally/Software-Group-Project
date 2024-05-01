@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="shortcut icon" type="x-icon" href="{% static 'Images/Short_icon.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ equipment.name }} Details</title>
+    <link rel="stylesheet" href="{% static 'css/equipment_details.css' %}">
+</head>
+<body>
+    <div class="content-wrapper">
+        <div class="Nav-sidebar">
+            <ul class="Nav-bar">
+                <li><a href="{% url 'inventory:user_item_list' %}">Item List</a></li>
+                <a href="#"><img src="{% static 'Images/itemlist.png'%}" alt="Item List Icon" class="item-icon"></a>
+        </div>
+
+        <div class="Logout-nav">
+            <ul>
+                <li><a href=#>Log Out</a></li>
+            </ul>
+        </div>
+
+        <div class="westmnstr-logo">
+            <a href="{% url 'inventory:user_dashboard_view' %}"><img src="{% static 'Images/Westminster Logo.png' %}" alt="Westminster logo"></a>
+        </div>
+
+        <div class="top-bar">
+        
+        </div>
+
+        <div class="dropdown">
+            <img src="{% static 'images/DefaultUser.png' %}" alt="User-profile">
+            <div class="dropdown-content">
+                <a href=#>Login</a>
+                <a href=>Account Settings</a>
+            </div>
+        </div>
+
+
+    
+
+        <div class="line-divider"></div>
+
+        <section class="equipment-section">
+            <h5>Overview</h5>
+            <table>
+                <tr>
+                    <th class="overview-header" colspan="2">Overview</th>
+                </tr>
+                <tr>
+                    <td class="table-label">Equipment Name</td>
+                    <td>{{ equipment.name }}</td>
+                </tr>
+                <tr>
+                    <td class="table-label">Device Serial</td>
+                    <td>{{ equipment.serial_number }}</td>
+                </tr>
+                <tr>
+                    <td class="table-label">Equipment Category</td>
+                    <td>{{ equipment.category }}</td>
+                </tr>
+                <tr>
+                    <td class="table-label">CPU</td>
+                    <td>{{ equipment.cpu }}</td>
+                </tr>
+                <tr>
+                    <td class="table-label" style="vertical-align: top;">Reservation</td>
+                    <td>
+                        {% if reservation %}
+                        <!-- Display the cancellation form only if there is a reservation -->
+                        <form action="{% url 'inventory:equipment_details' equipment.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="submit" name="cancel_reservation" value="Cancel Reservation" class="btn btn-danger">
+                        </form>
+                        {% else %}
+                        <!-- Display reservation form or message -->
+                        <form action="{% url 'inventory:apply_reservation' equipment.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="reserve">Apply for reservation</button>
+                        </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-label" style="vertical-align: top;"> </td>
+                    <td style="text-align: right;">
+                        {% if messages %}
+                        <div class="messages">
+                            {% for message in messages %}
+                            <div class="message {{ message.tags }}">{{ message }}</div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <div class="image-container">
+                            <h4>Product Image</h4>
+                            <div class="border-wrapper"></div>
+                            <img src="{% static equipment.image_url %}" alt="Product Image">
+                        </div>
+                    </td>
+                    
+                </tr>
+            </table>
+        </section>
+
+        
+    </div>
+</body>
+</html>
