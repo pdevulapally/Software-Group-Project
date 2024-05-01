@@ -488,7 +488,7 @@ def add_equipment(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Equipment added successfully!')
-            return redirect('inventory/:admin_item_list.html')
+            return redirect('inventory/admin_item_list.html')
         else:
             messages.error(request, 'Please correct the errors below.')
     else:
