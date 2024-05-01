@@ -1,0 +1,321 @@
+
+body {
+  width: auto;
+  background-image: url('../Images/university-of-westminister-harrow-campus1111-under-construction-harrow-EDEA9D_result.png');
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+}
+
+
+.westmnstr-logo{
+ position: fixed;
+ top: 0;
+ left: 0;
+ padding: 20px;
+ z-index: 2;
+}
+
+.westmnstr-logo img{
+    width: 150px;
+    height: auto;
+    position: relative;
+    top: -15px;
+}
+
+.dashbrd-h3{
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 2;  
+    position: fixed;
+    right: 1036px;
+    bottom: 490px;
+    white-space: nowrap;
+}
+
+
+.Nav-sidebar {
+  width: 223px;
+  height: 100%;
+  background-color: white;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  overflow-x: hidden;
+  margin-bottom: 0;
+}
+
+.Nav-bar ul {
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.Nav-bar li a {
+  display: block;
+  color: gray;
+  padding: 1px 16px;
+  text-decoration: none;
+  font-size: medium;
+  position: relative;
+  bottom: -104px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Nav-bar li a.blue-link {
+  color: #0867EC;
+}
+
+
+  .dash-icon{
+    position: relative;
+    top: 81px;
+    left: -23px;
+    width: 24px;
+    height: auto;
+  }
+
+  .item-icon{
+    position: relative;
+    top: 78px;
+    left: -26px;
+    width: 30px;
+    height: auto;
+  }
+
+  .report-icon{
+    position: relative;
+    top: 79px;
+    left: -23px;
+    width: 26px;
+    height: auto;
+  }
+
+  .manage-icon{
+    position: relative;
+    top: 72px;
+    left: -30px;
+    width: 36px;
+    height: auto;
+  }
+
+  .manageusers-icon{
+    position: relative;
+    top: 77px;
+    left: -26px;
+    width: 30px;
+    height: auto;
+  }
+
+  .previousbkng-icon{
+    position: relative;
+    top: 74px;
+    left: -27px;
+    width: 30px;
+    height: auto;
+  }
+
+  .alert-icon{
+    position: relative;
+    top: 75px;
+    left: -27px;
+    width: 30px;
+    height: auto;
+  }
+
+  .Logout-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 223px; 
+    background-color: white;
+    z-index: 1;
+}
+
+.Logout-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Logout-nav li {
+    display: block;
+    padding: 10px;
+}
+
+.Logout-nav li a {
+    color: #F31919;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    right: -43px;
+    bottom: -28px;
+}
+ 
+.Logout-icon{
+  position: relative;
+  top: -3px;
+  right: -17px;
+}
+
+.top-bar{
+    width: 100%;
+    height: 60px;
+    background-color:white;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    right: 0px;
+    overflow-y: hidden;
+}
+
+.search-bar {
+  width: calc(100% - 223px - 20px); 
+  background-color: white;
+  padding: 14px;
+  position: fixed;
+  top: 0;
+  left: 223px;
+  z-index: 3;
+  
+}
+
+.search-bar input[type=text] {
+  width: 808px; 
+  padding: 8px;
+  border: 1px solid black;
+}
+
+
+.dropdown {
+  position: absolute;
+  top: 0;
+  right: 117px;
+  margin-top: 10px; 
+  margin-right: 10px; 
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  white-space: nowrap; 
+  display: block;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown img {
+  border-radius: 50%;
+}
+
+
+.line-divider {
+  position: fixed;
+  top: 0;
+  left: 223px; 
+  width: 1px; 
+  height: 11%; 
+  background-color: #ccc; 
+  z-index: 3; 
+}
+
+.Nav-bar li a.blue-link img {
+  filter: brightness(0.7); 
+}
+
+.main-content-wrapper {
+  margin-left: 223px;
+  padding: 20px;
+  overflow-y: auto;
+  height: calc(100vh - 40px);
+}
+
+.alert-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.Alerts-container {
+  background-color: #fff;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.header-container {
+  color: #fff;
+  background-color: #4CAF50;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.Action, .Action.Reject {
+  display: inline-block;
+  padding: 8px 16px;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.Action {
+  background-color: #4CAF50;  /* Green */
+}
+
+.Action.Reject {
+  background-color: #F44336;  /* Red */
+}
+
+.Action:hover, .Action.Reject:hover {
+  opacity: 0.85;
+}
+
+
+.btn-return {
+  background-color: #f44336; /* Example: Red for return */
+  color: white;
+  padding: 8px 16px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-return:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
