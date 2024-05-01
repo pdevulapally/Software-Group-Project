@@ -233,12 +233,13 @@ body::after {
   right: -17px;
 }
 .table-box {
-  margin-top: 80px; /* Offset from top to account for fixed headers */
-  width: calc(100% - 250px); /* Account for sidebar */
-  margin-left: 223px; /* Align with the end of the sidebar */
+  margin-top: 180px; 
+  width: 900px;
+  margin-left: 400px; 
   background-color: white;
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  left: 100px
 }
 
 table {
@@ -253,7 +254,7 @@ th, td {
 }
 
 button {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50; 
   color: white;
   padding: 10px 20px;
   margin: 8px 0;
@@ -266,25 +267,14 @@ button:hover {
   background-color: #45a049;
 }
 
-.pagination-container {
-  text-align: center;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2; 
   padding: 10px 0;
+  margin-top: 20px; 
+  background-color: transparent;
+  align-items: center;
 }
-
-.pagination-container a {
-  color: black;
-  float: none;
-  padding: 8px 16px;
-  text-decoration: none;
-  transition: background-color .3s;
-  border: 1px solid #ddd; /* Gray */
-  margin: 0 4px;
-}
-
-.pagination-container a.active {
-  background-color: #4CAF50;
-  color: white;
-  border: 1px solid #4CAF50;
-}
-
-.pagination-container a:hover:not(.active) {background-color: #ddd;}

@@ -19,12 +19,12 @@ h2 {
 label {
   display: inline-block;
   margin-bottom: 5px;
-  width: 120px; /* Adjust label width if needed */
+  width: 120px; 
 }
 
 input[type="text"],
 input[type="number"] {
-  width: calc(100% - 130px); /* Adjust input width based on label width */
+  width: calc(100% - 130px); 
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 7px;
@@ -67,7 +67,7 @@ form {
 }
 
 .image-upload-container {
-  margin-right: 20px; /* Adjust margin to move the box */
+  margin-right: 20px;
 }
 
 .image-upload {
@@ -84,7 +84,7 @@ form {
 }
 
 input[type="file"] {
-  display: none; /* Hide the default file input */
+  display: none;
 }
 
 .browse-text {

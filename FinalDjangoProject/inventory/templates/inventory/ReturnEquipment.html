@@ -18,9 +18,7 @@
                 <img src="{% static 'Images/itemlist.png' %}" alt="Item List Icon" class="item-icon">
                 <li><a href="{% url 'inventory:return_equipment' %}">Return Equipment</a></li>
                 <img src="{% static 'Images/Report.png' %}" alt="Report Icon" class="report-icon">
-                <li><a href=#>Previous Bookings</a></li>
-                <img src="{% static 'Images/PreviousBooking.png' %}" alt="Previous booking icon" class="previousbkng-icon">
-                <li><a href=#>Alerts</a></li>
+                <li><a href="{% url 'inventory:user_alerts' %}">Alerts</a></li>
                 <img src="{% static 'Images/Alert.png' %}" alt="Alerts Icon" class="alert-icon">
             </ul>
         </div>
@@ -29,7 +27,7 @@
 
         <div class="Logout-nav">
             <ul>
-                <li><a href=#>Log Out</a></li>
+                <li><a href="{% url 'inventory:logout' %}">Logout</a></li>
                 <img src="{% static 'Images/Logout.png' %}" alt="Logout Icon" class="Logout-icon">
             </ul>
         </div>
@@ -67,12 +65,6 @@
             </div>
         </div>
 
-        <div class="dropdown">
-            <img src="{% static 'images/DefaultUser.png' %}" alt="User-profile">
-            <div class="dropdown-content">
-                <a href="{% url 'inventory:user_account_settings' %}">Account Settings</a>
-            </div>
-        </div>
 
         <div class="line-divider"></div>
     </div>

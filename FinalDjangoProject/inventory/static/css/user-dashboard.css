@@ -162,7 +162,7 @@ body {
 }
 
 .search-bar {
-  width: calc(100% - 223px - 20px); /* Adjust width to account for the width of Nav-sidebar and padding of top-bar */
+  width: calc(100% - 223px - 20px); 
   background-color: white;
   padding: 14px;
   position: fixed;

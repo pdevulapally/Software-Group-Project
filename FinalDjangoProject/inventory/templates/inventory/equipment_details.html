@@ -12,7 +12,6 @@
     <div class="content-wrapper">
         <div class="Nav-sidebar">
             <ul class="Nav-bar">
-                <!-- Check if the user is admin or superuser -->
                 {% if request.user.is_superuser or request.user.is_staff %}
                     <li><a href="{% url 'inventory:admin_item_list' %}">Item List</a></li>
                 {% else %}
@@ -75,13 +74,12 @@
                     <td class="table-label" style="vertical-align: top;">Reservation</td>
                     <td>
                         {% if reservation %}
-                        <!-- Display the cancellation form only if there is a reservation -->
+
                         <form action="{% url 'inventory:equipment_details' equipment.id %}" method="post">
                             {% csrf_token %}
                             <input type="submit" name="cancel_reservation" value="Cancel Reservation" class="btn btn-danger">
                         </form>
                         {% else %}
-                        <!-- Display reservation form or message -->
                         <form action="{% url 'inventory:apply_reservation' equipment.id %}" method="post">
                             {% csrf_token %}
                             <button type="submit" class="reserve">Apply for reservation</button>
@@ -99,11 +97,6 @@
                             {% endfor %}
                         </div>
                         {% endif %}
-                        <div class="image-container">
-                            <h4>Product Image</h4>
-                            <div class="border-wrapper"></div>
-                            <img src="{% static equipment.image_url %}" alt="Product Image">
-                        </div>
                     </td>
                     
                 </tr>

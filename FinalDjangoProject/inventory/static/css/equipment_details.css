@@ -337,12 +337,12 @@ table tr td button:hover {
 }
 
 .reserve {
-  position: relative; /* Change position to relative */
-  left: -30%; /* Adjust the left position */
+  position: relative; 
+  left: -30%;
   transform: translateX(-50%);
   width: 160px;
   height: 60px;
-  margin-top: 20px; /* Add margin top for spacing */
+  margin-top: 20px; 
   color: white;
   background-color: #1366D9;
   border: 2px solid #1366D9;

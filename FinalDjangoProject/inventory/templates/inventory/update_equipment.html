@@ -3,14 +3,13 @@
 <head>
     {% load static %}
     <title>Update Equipment</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/admin-addnew.css' %}"> <!-- Assuming reuse of the add equipment CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/admin-addnew.css' %}"> 
 </head>
 <body>
     <form method="post" action="{% url 'inventory:update_equipment' equipment.id %}">
         {% csrf_token %}
         <h2>Update Equipment</h2>
 
-        <!-- Assume using a form similar to your add equipment, but fields populated with existing data -->
         <div class="form-group">
             <label for="name">Product Name:</label>
             <input type="text" id="name" name="name" value="{{ equipment.name }}" required>

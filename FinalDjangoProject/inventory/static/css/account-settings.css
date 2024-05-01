@@ -403,56 +403,54 @@ input[type="text"] {
   background-color: #f1f1f1;
 }
 
-/* Main content wrapper styling */
+
 .main-content-wrapper {
   display: flex;
-  justify-content: center;  /* Centers the content horizontally */
-  align-items: center;      /* Centers the content vertically */
-  height: 100vh;            /* Full viewport height */
-  padding: 20px;            /* Adds some space around the content */
+  justify-content: center;  
+  align-items: center;      
+  height: 100vh;            
+  padding: 20px;            
 }
 
-/* Account settings container styling */
 .AccountSettings-container {
   background-color: #f9f9f9;
   padding: 20px;
-  width: auto;              /* Adjust width based on the content */
-  max-width: 600px;         /* Maximum width to avoid too wide fields */
+  width: auto;           
+  max-width: 600px;        
   text-align: center;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;         /* Keeps everything neat */
+  overflow: hidden;         
 }
 
-/* Profile information column adjustments */
+
 .profile-info-column {
-  margin: auto;             /* Automatically margin for alignment */
+  margin: auto;            
   display: flex;
-  flex-direction: column;   /* Stack input fields vertically */
-  width: 100%;              /* Use full width of the container */
+  flex-direction: column;  
+  width: 100%;              
 }
 
-/* Input fields styling */
 input[type="text"],
 input[type="email"] {
-  width: 100%;              /* Full width to fill the container */
+  width: 100%;              
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box;   /* Includes padding and border in width */
+  box-sizing: border-box;   
 }
 
-/* Button styling */
+
 .submit-btn, .cancel-btn {
-  width: auto;              /* Adjust width to fit text */
+  width: auto;             
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   background-color: #0867EC;
   color: white;
   border: none;
-  margin-top: 10px;         /* Space above the button */
+  margin-top: 10px;       
 }
 
 .submit-btn:hover, .cancel-btn:hover {

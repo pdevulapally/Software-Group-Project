@@ -331,6 +331,12 @@ def apply_reservation(request, equipment_id):
     
     return render(request, 'inventory/equipment_details.html', {'equipment': equipment})
 
+from django.shortcuts import redirect, get_object_or_404
+from django.contrib import messages
+from .models import Booking, Equipment
+from django.contrib.auth.decorators import login_required
+
+@login_required
 def cancel_reservation(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     equipment = booking.equipment
@@ -339,7 +345,11 @@ def cancel_reservation(request, booking_id):
         equipment.save()
         booking.delete()  # Assuming you want to remove the booking altogether
         messages.success(request, "Reservation cancelled and equipment is now available.")
-        return redirect('inventory:user_item_list')
+         # Redirect based on user type
+        if request.user.is_superuser:
+            return redirect('inventory/user-itemlist.html')
+        else:
+            return redirect('inventory/admin-itemlist.html')
     else:
         messages.error(request, "No active reservation to cancel.")
         return redirect('inventory:equipment_details', equipment_id=equipment.id)

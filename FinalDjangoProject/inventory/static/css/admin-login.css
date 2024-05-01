@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(0, 0, 0); /* Ensuring a white background */
+    background-color: rgb(0, 0, 0); 
     overflow: hidden;
 }
 
@@ -46,10 +46,10 @@ button {
     padding: 6px 95px;
     color: white;
     position: relative;
-    bottom: -115px; /* Adjusted for message placement */
+    bottom: -115px; 
     right: -795px;
     cursor: pointer;
-    border: none; /* Ensuring no border */
+    border: none; 
     border-radius: 2px;
     margin-bottom: 20px;
 }
@@ -57,7 +57,7 @@ button {
 .forgot a {
     color: #1366D9;
     position: relative;
-    bottom: -108px; /* Adjusted to align below the button */
+    bottom: -108px; 
     right: -786px;
     font-size: smaller;
     font-family: Arial, Helvetica, sans-serif;
@@ -73,9 +73,9 @@ label {
     color: yellow;
 }
 
-/* Adjusted the .messages container to display error messages effectively */
+
 .messages {
-    margin-top: 10px; /* Reduced space for compactness */
+    margin-top: 10px; 
     color: white;
     background: #000;
     padding: 10px;
@@ -83,9 +83,9 @@ label {
     text-align: center;
     position: relative;
     right: -794px;
-    bottom: -180px; /* Adjust bottom position to raise closer to the button */
-    width: 220px; /* Match the input field width */
-    box-sizing: border-box; /* Include padding and border in width */
+    bottom: -180px;
+    width: 220px; 
+    box-sizing: border-box; 
 }
 
 .messages div {

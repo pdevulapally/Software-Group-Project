@@ -12,10 +12,10 @@
 </head>
 <body>
     <div class="content-wrapper">
-        <!-- Navigation Sidebar -->
+
         <div class="Nav-sidebar">
             <ul class="Nav-bar">
-                <!-- Repeat this block for each nav item -->
+
                 <li> <a href="{% url 'inventory:admin_dashboard'%}" onclick="toggleNav(this)">Dashboard</a></li>
                 <a href="{% url 'inventory:admin_dashboard'%}"><img src="{% static 'Images/home.png' %}" alt="Dashboard Icon" class="dash-icon"></a>
                 <li> <a href="#" onclick="toggleNav(this)">Item List</a></li>
@@ -28,7 +28,7 @@
                 <a href="{% url 'inventory:admin_alerts' %}"><img src="{% static 'Images/Alert.png' %}" alt="Alerts Icon" class="alert-icon"></a>
             </ul>
         </div>
-        <!-- Logout Navigation -->
+
         <div class="Logout-nav">
             <ul>
                 <li><a href="{% url 'inventory:logout' %}">Logout</a></li>
@@ -36,13 +36,13 @@
             </ul>
         </div>
     
-        <!-- Westminster Logo -->
+
         <div class="westmnstr-logo">
             <a href="Dashboard.html">
                 <img src="{% static 'Images/Westminster Logo.png' %}" alt="Westminster Logo">
             </a>
         </div>
-        <!-- Top Bar Search and Profile -->
+
         <div class="top-bar">
             <div class="search-bar">
                 <form action="{% url 'inventory:admin_item_list' %}" method="GET">
@@ -61,9 +61,9 @@
                 </div>
             </div>
         </div>
-        <!-- Main Content Section -->
+
         <div class="main-content">
-            <!-- Equipment Section -->
+
             <div class="main-content">
                 
 
@@ -75,7 +75,7 @@
                         <tr>
                             <th>Status</th>
                             <th>id</th>
-                            <th>Details</th> <!-- Added details column -->
+                            <th>Details</th> 
                             <th>Update item</th>
                         </tr>
                     </thead>

@@ -1,9 +1,10 @@
 body {
     width: auto;
-    background-color: #F0F1F3;
+    background-image: url('../Images/university-of-westminister-harrow-campus1111-under-construction-harrow-EDEA9D_result.png');
     overflow: hidden;
     margin: 0;
     padding: 0;
+    background-size: cover;
   }
   
   
@@ -288,7 +289,7 @@ body {
     display: flex;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #ccc; /* Gray color for separating lines */
+    border-bottom: 1px solid #ccc;
   }
 
   .return-item p{

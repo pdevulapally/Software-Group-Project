@@ -256,14 +256,14 @@ table {
   margin: 84px auto;
   border-collapse: collapse;
   background-color: #fff;
-  width:60%; /* Adjusted for a better fit on the page */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Adds shadow for depth */
+  width:60%; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
   font-size: 14px;
   overflow: auto;
 }
 table tr td {
   padding: 14px;
-  margin-bottom: -25px; /* Decrease the margin value to reduce the space */
+  margin-bottom: -25px; 
   padding-left: 25px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -357,7 +357,7 @@ table tr td button:hover {
 }
 .filter-but
 {
- background-color: #1366D9; /* Green */
+ background-color: #1366D9;
   border: none;
   color: white;
  padding: 8px 16px;
@@ -369,7 +369,7 @@ table tr td button:hover {
   left: 72%;
 }
 .previous-but {
-  background-color: #1366D9; /* Green */
+  background-color: #1366D9; 
   border: none;
   color: white;
   width: 100px;
@@ -396,13 +396,11 @@ table tr td button:hover {
 
 
 table th, table td {
-  border: 1px solid #ddd; /* Adds border to table cells */
+  border: 1px solid #ddd; 
   padding: 10px;
-  text-align: center; /* Aligns text to the left. Use 'center' for center alignment */
+  text-align: center; 
 }
 
-
-/* Ensuring buttons and icons within the action cell are inline and centered */
 .approvebuts {
   display: auto;
   justify-content: left;
@@ -419,7 +417,7 @@ table tbody tr:nth-child(odd) {
 }
 
 table tbody tr:hover {
-  background-color: #f1f1f1; /* Highlight row on hover */
+  background-color: #f1f1f1; 
 }
 button:hover {
   background-color: #054FCC;
@@ -446,7 +444,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom:10px; /* Space between header and table */
+  margin-bottom:10px;
 }
 
 
@@ -457,7 +455,7 @@ button:hover {
 }
 
 .pagination {
-  text-align: center; /* Center align the pagination buttons */
+  text-align: center;
   padding: 10px;
 }
 
@@ -467,8 +465,8 @@ button:hover {
   color: white;
   text-decoration: none;
   border-radius: 4px;
-  margin: 10px; /* Space between buttons */
-  display: inline-block; /* This makes sure your buttons are properly formatted */
+  margin: 10px; 
+  display: inline-block; 
 }
 
 .next-button {
@@ -477,8 +475,8 @@ button:hover {
   color: white;
   text-decoration: none;
   border-radius: 4px;
-  margin: 10px; /* Space between buttons */
-  display: inline-block; /* This makes sure your buttons are properly formatted */
+  margin: 10px; 
+  display: inline-block; 
 }
 
 .previous-but:hover, .next-but:hover {
@@ -519,9 +517,9 @@ button:hover {
 }
 
 .content-wrapper {
-  min-height: 100vh; /* Minimum height of viewport */
-  overflow: auto; /* Enable scrolling inside the content wrapper if needed */
-  padding-bottom: 50px; /* Adjust padding as needed */
+  min-height: 100vh;
+  overflow: auto; 
+  padding-bottom: 50px; 
 }
 
 .filter-form select {

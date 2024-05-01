@@ -3,9 +3,9 @@ body {
     overflow: scroll;
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
-    height: 100vh; /* Full height of the viewport */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    height: 100vh; 
+    justify-content: center; 
+    align-items: center; 
     margin: 0;
 }
 
@@ -17,7 +17,7 @@ h2.Apply-h2 {
 
 form {
     display: block;
-    width: 400px; /* Adjust width as needed */
+    width: 400px; 
     margin: 0 auto;
     padding: 20px;
     background-color: #000000;

@@ -294,11 +294,11 @@ body {
 }
 
 .Action {
-  background-color: #4CAF50;  /* Green */
+  background-color: #4CAF50; 
 }
 
 .Action.Reject {
-  background-color: #F44336;  /* Red */
+  background-color: #F44336;
 }
 
 .Action:hover, .Action.Reject:hover {

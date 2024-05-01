@@ -240,11 +240,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh; /* Adjust the height as necessary */
+  height: 100vh; 
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* This will make sure no scrolling happens */
+  overflow: hidden; 
 }
 
 .line-divider {

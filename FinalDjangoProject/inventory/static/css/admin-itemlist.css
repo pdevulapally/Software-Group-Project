@@ -7,7 +7,7 @@ body {
   padding: 0px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* This will center your content vertically */
+  justify-content: center;
 }
 
 body::after {
@@ -195,6 +195,14 @@ body::after {
     width: 30px;
     height: 30px;
   }
+  .Logout-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 223px; 
+    background-color: white;
+    z-index: 1;
+  }
   
 .top-bar{
     width: 100%;
@@ -219,19 +227,9 @@ body::after {
   padding: 14px;
 }
 
-.Logout-nav {
-  padding-bottom: 20px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 223px; 
-  background-color: white;
-  z-index: 1;
-}
-
 .Logout-nav ul {
   list-style: none;
-  padding: 20;
+  padding: 0;
   margin: 0;
 }
 
@@ -246,15 +244,14 @@ body::after {
   cursor: pointer;
   position: relative;
   text-decoration: none;
-  right: 50px;
+  right: -43px;
   bottom: -28px;
-  padding: 20px;
 }
 
 .Logout-icon{
-position: auto;
+position: relative;
 top: -3px;
-right: -25px;
+right: -17px;
 }
 
 h1 {
@@ -265,32 +262,32 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
 }
 .table-container {
-  display: block; /* Changed from flex to block to stack on the background */
+  display: block;
   justify-content: center;
   align-items: center;
   padding-bottom: 20px;
   max-height: 65vh;
   overflow-y: auto;
   padding: 20px;
-  position: relative; /* To stack on top of ::after */
-  z-index: 2; /* Higher index to be above the ::after pseudo-element */
-  background-color: rgba(255, 255, 255, 1); /* white background with opacity */
+  position: relative; 
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 1); 
   margin-bottom: 10px;
-  width: 60%; /* Adjust as needed */
+  width: 60%; 
   height: 80%;
-  border-radius: 8px; /* Optional: adds rounded corners to the box */
+  border-radius: 8px; 
   overflow-y: auto;
   padding-right: 40px;
   border: black 1px solid;
 }
 
 table {
-  width: 100%; /* Take up the full width of .table-container */
+  width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
-  margin-top: 20px; /* Add space above the table */
-  position: relative; /* To allow z-index */
-  z-index: 2; /* Ensure table text is above the ::after background overlay */
+  margin-top: 20px;
+  position: relative; 
+  z-index: 2; 
 }
 thead {
   background-color: #f4f4f4;
@@ -300,7 +297,7 @@ th, td {
   text-align: left;
   padding: 8px;
   border-bottom: 1px solid #ddd;
-  word-break: break-word; /* Ensures text wraps in the cell */
+  word-break: break-word;
 }
 
 th.action-column, td.action-column {
@@ -348,11 +345,11 @@ table tr td input[type="checkbox"] {
 .filter-button,
 .previous-button,
 .next-button {
-  font-family: Helvetica, Arial, sans-serif; /* Change font to Helvetica */
+  font-family: Helvetica, Arial, sans-serif;
   z-index: 2;
 }
 .add-button {
-  background-color: #1366D9; /* Green */
+  background-color: #1366D9;
   border: none;
   color: white;
   padding: 8px 10px;
@@ -363,9 +360,9 @@ table tr td input[type="checkbox"] {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 4px;
-  position: relative; /* Change to relative positioning */
-  top: 0px; /* Adjust the top position */
-  left: 590px; /* Adjust the left position */
+  position: relative; 
+  top: 0px;
+  left: 590px; 
 }
 
 .add-button:hover {
@@ -394,7 +391,7 @@ table tr td input[type="checkbox"] {
 }
 
 .filter-button {
-  padding: 8px 12px; /* Adjust padding as needed */
+  padding: 8px 12px;
   border: 1px solid #ccc;
   background-color: #f0f0f0;
   color: #555;
@@ -403,9 +400,9 @@ table tr td input[type="checkbox"] {
   border-radius: 4px;
   display: flex;
   align-items: center;
-  position: relative; /* Change to relative positioning */
-  top: -40px; /* Adjust the top position */
-  left: 740px; /* Adjust the left position */
+  position: relative;
+  top: -40px;
+  left: 740px;
 }
 
 .filter-button:hover {
@@ -432,36 +429,36 @@ table tr td input[type="checkbox"] {
   font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
-  z-index: 2; /* Ensure buttons are above the ::after background overlay */
-  margin: 0 5px; /* Add space around buttons */
+  z-index: 2; 
+  margin: 0 5px; 
 }
 .pagination {
   display: flex;
-  justify-content: center; /* Center pagination buttons */
-  position: relative; /* To allow z-index */
-  z-index: 2; /* Ensure pagination is above the ::after background overlay */
+  justify-content: center; 
+  position: relative;
+  z-index: 2;
   padding: 10px 0;
-  margin-top: 20px; /* Space above pagination */
-  background-color: transparent; /* No background */
+  margin-top: 20px; 
+  background-color: transparent;
   align-items: center;
 }
 
 
 .main-content {
-  padding-top: 40px; /* 60px height of the top-bar plus 10px space */
-  margin-left: 223px; /* Same as the width of your sidebar */
+  padding-top: 40px;
+  margin-left: 223px; 
 }
 
 .equipment-section {
   background-color: rgba(255, 255, 255, 1);
   padding: 20px;
   border-radius: 8px;
-  margin-top: 10vh; /* Adjust top margin to lower the equipment section */
-  width: auto; /* Adjust the width as necessary */
-  max-width: 1050px; /* Maximum width of the section, you can adjust this */
-  margin-left: auto; /* Auto margins for centering horizontally */
+  margin-top: 10vh; 
+  width: auto;
+  max-width: 900px; 
+  margin-left: -40px; 
   margin-right: auto;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for depth */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
   padding-bottom: 50px;
 }
 

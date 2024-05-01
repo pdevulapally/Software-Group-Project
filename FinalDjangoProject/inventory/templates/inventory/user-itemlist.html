@@ -15,38 +15,28 @@
                 <li><a href="{% url 'inventory:user_dashboard_view' %}">Dashboard</a></li>
                 <a href="{% url 'inventory:user_dashboard_view' %}"><img src="{% static 'Images/home.png'%}" alt="Dashboard Icon" class="dash-icon"></a>
                 <li><a href="{% url 'inventory:user_item_list' %}">Item List</a></li>
-                <a href="#"><img src="{% static 'Images/itemlist.png'%}" alt="Item List Icon" class="item-icon"></a>
-                <li> <a href="#" onclick="toggleNav(this)">Return Equipment</a></li>
-                <a href="#"><img src="{% static 'Images/Report.png'%}" alt=" Return Icon" class="return-icon"></a>
-                <li> <a href="Alerts.html" onclick="toggleNav(this)">Alerts</a></li>
-                <a href="Alerts.html"><img src="{% static 'Images/Alert.png'%}" alt=" Alerts Icon" class="alert-icon"></a>
-                <li> <a href="{% url 'inventory:user_previous_bookings' %}" onclick="toggleNav(this)">Previous Bookings</a></li>
-                <a href="{% url 'inventory:user_previous_bookings' %}"><img src="{% static 'Images/PreviousBooking.png' %}" alt="Previous booking icon" class="previousbkng-icon"></a>
-            
+                <a href="{% url 'inventory:user_item_list' %}"><img src="{% static 'Images/itemlist.png'%}" alt="Item List Icon" class="item-icon"></a>
+                <li> <a href="{% url 'inventory:return_equipment' %}" onclick="toggleNav(this)">Return Equipment</a></li>
+                <a href="{% url 'inventory:return_equipment' %}"><img src="{% static 'Images/Report.png'%}" alt=" Return Icon" class="return-icon"></a>
+                <li> <a href="{% url 'inventory:user_alerts' %}" onclick="toggleNav(this)">Alerts</a></li>
+                <a href="{% url 'inventory:user_alerts' %}"><img src="{% static 'Images/Alert.png'%}" alt=" Alerts Icon" class="alert-icon"></a>
         </div>
     </div>
 
-    <div class="Logout-nav">
-        <ul>
-            <li><a href=# onclick="toggleNav(this)">Log Out</a></li>
-            <a href=#><img src="{% static 'Images/Logout.png' %}" alt="Logout Icon" class="Logout-icon"></a>
-        </ul>
-    </div>
-
     <div class="westmnstr-logo">
-        <a href=#><img src="{% static 'Images/Westminster Logo.png' %}" alt="Westminster logo"></a>
+        <a href="{% url 'inventory:user_dashboard_view' %}"><img src="{% static 'Images/Westminster Logo.png' %}" alt="Westminster logo"></a>
     </div>
     <div class="top-bar">
         
     </div>
 
-    <div class="dropdown">
-        <img src="{% static 'images/DefaultUser.png' %}" alt="User-profile">
-        <div class="dropdown-content">
-            <a href="{% url 'inventory:custom_login' %}">Login</a>
-            <a href="{% url 'inventory:user_account_settings' %}">Account Settings</a>
-        </div>
+    <div class="Logout-nav">
+        <ul>
+            <li><a href="{% url 'inventory:logout' %}">Logout</a></li>
+            <a href="{% url 'inventory:logout' %}"><img src="{% static 'Images/Logout.png' %}" alt="Logout Icon" class="Logout-icon"></a>
+        </ul>
     </div>
+
 
     <div class="line-divider"></div>
 
@@ -56,24 +46,37 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Availability</th>
-                        <th>Details</th>
+                        <th>Status</th>
+                        <th>id</th>
+                        <th>Details</th> 
                     </tr>
                 </thead>
                 <tbody>
                     {% for equipment in page_obj %}
                     <tr>
                         <td>{{ equipment.status }}</td>
+                        <td>{{ equipment.id }}</td>
                         <td><a href="{% url 'inventory:equipment_details' equipment.id %}">{{ equipment.name }}</a></td>
                     </tr>
                     {% empty %}
                     <tr><td colspan="6">No equipment available.</td></tr>
                     {% endfor %}
                 </tbody>
+
+                
             </table>
+            <div class="pagination">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+                <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                {% endif %}
+            </div>
         </section>
     </div>
-    
+
 
 
 </body>
