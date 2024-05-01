@@ -88,6 +88,8 @@ from django.contrib import messages
 from .models import Student, Staff  # Ensure your models are imported correctly
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from django.contrib.auth.password_validation import validate_password
+from django.core.exceptions import ValidationError as DjangoValidationError
 
 def register_account(request):
     if request.method == 'POST':
@@ -101,6 +103,13 @@ def register_account(request):
         if User.objects.filter(username=email).exists():
             messages.error(request, "A user with this email already exists.")
             return render(request, 'inventory/register.html')  # Return to the registration form
+
+        # Validate password
+        try:
+            validate_password(password, user=None)
+        except DjangoValidationError as e:
+            messages.error(request, f"Password validation failed: {', '.join(e)}")
+            return render(request, 'inventory/register.html')
 
         # Create User
         try:
@@ -127,6 +136,8 @@ def register_account(request):
             return render(request, 'inventory/register.html')
 
     return render(request, 'inventory/register.html')
+
+
 
 
 def approval_wait(request):
@@ -231,6 +242,8 @@ def user_item_list(request):
         page_obj = paginator.get_page(page_number)
         return render(request, 'inventory/user-itemlist.html', {'page_obj': page_obj})
     
+
+from django.db.models import Q
 @login_required
 def admin_item_list(request):
     if request.method == 'POST':
@@ -251,6 +264,13 @@ def admin_item_list(request):
         return redirect('inventory/admin-itemlist')  # Redirect to a URL that is confirmed to exist
     else:
         equipment_list = Equipment.objects.all()
+        search_query = request.GET.get('search', '')  # Provide a default value if search query is None
+        search_query = search_query.strip(", ")  # Strip any commas and spaces from the search query
+        print("Search Query:", search_query)  # Debugging print statement
+
+        equipment_list = Equipment.objects.all()
+        if search_query:
+            equipment_list = equipment_list.filter(name__icontains=search_query)
         paginator = Paginator(equipment_list, 10)  # Show 10 equipments per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
@@ -437,9 +457,57 @@ def user_alerts(request):
 
 @login_required
 def user_previous_bookings(request):
-    user_bookings = Booking.objects.filter(user=request.user, returned=True).order_by('-end_date')
-    logger.debug(f"Previous bookings retrieved: {user_bookings.count()}")
-    paginator = Paginator(user_bookings, 10)
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
-    return render(request, 'inventory/user-previousbooking.html', {'bookings': page_obj})
+    bookings = Booking.objects.filter(user=request.user, returned=True).order_by('-end_date')
+    return render(request, 'inventory/user-previous_bookings.html', {'bookings': bookings})
+
+@login_required
+def admin_previous_bookings(request):
+    bookings = Booking.objects.filter(returned=True).order_by('-end_date')
+    return render(request, 'inventory/admin-previous-bookings.html', {'bookings': bookings})
+
+from .forms import EquipmentForm
+from .models import Equipment
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from django.shortcuts import render, redirect
+
+@login_required
+def add_equipment(request):
+    if request.method == 'POST':
+        form = EquipmentForm(request.POST, request.FILES)  # Include request.FILES if handling files
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Equipment added successfully!')
+            return redirect('inventor/:admin_item_list.html')
+        else:
+            messages.error(request, 'Please correct the errors below.')
+    else:
+        form = EquipmentForm()
+    return render(request, 'inventory/add_equipment.html', {'form': form})
+
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Equipment
+from .forms import EquipmentForm
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+
+@login_required
+def update_equipment(request, equipment_id):
+    equipment = get_object_or_404(Equipment, pk=equipment_id)
+    if request.method == 'POST':
+        form = EquipmentForm(request.POST, instance=equipment)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Equipment updated successfully!")
+            return redirect('inventory:admin_item_list')
+        else:
+            messages.error(request, "Error updating equipment.")
+    else:
+        form = EquipmentForm(instance=equipment)
+    return render(request, 'inventory/update_equipment.html', {'form': form, 'equipment': equipment})
+
+
+from django.shortcuts import render
+
+def forgot_password(request):
+    return render(request, 'inventory/forgot_password.html')

@@ -46,12 +46,12 @@
 
         <div class="line-divider"></div>
 
-        <section class="equipment-section">
+        <section class="bookings-section">
             <h2>Previous Bookings</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>Equipment</th>
+                        <th>Equipment Name</th>
                         <th>Booking ID</th>
                         <th>Borrowed Date</th>
                         <th>Returned Date</th>
@@ -62,26 +62,14 @@
                     <tr>
                         <td>{{ booking.equipment.name }}</td>
                         <td>{{ booking.id }}</td>
-                        <td>{{ booking.start_date|date:"Y-m-d" }}</td>
-                        <td>{{ booking.end_date|date:"Y-m-d" }}</td>
+                        <td>{{ booking.start_date|date:"Y-m-d H:i" }}</td>
+                        <td>{{ booking.end_date|date:"Y-m-d H:i" }}</td>
                     </tr>
                     {% empty %}
-                    <tr>
-                        <td colspan="4">No previous bookings found.</td>
-                    </tr>
+                    <tr><td colspan="4">No previous bookings found.</td></tr>
                     {% endfor %}
                 </tbody>
             </table>
-            <!-- Pagination Links -->
-            <div class="pagination">
-                {% if page_obj.has_previous %}
-                    <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
-                {% endif %}
-                <span class="current-page">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
-                {% if page_obj.has_next %}
-                    <a href="?page={{ page_obj.next_page_number }}">Next</a>
-                {% endif %}
-            </div>
         </section>
     </div>
 </body>

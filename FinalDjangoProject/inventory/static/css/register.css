@@ -1,6 +1,7 @@
 body {
     background-color: black;
-    overflow: hidden;
+    overflow: scroll;
+    font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh; /* Full height of the viewport */
     justify-content: center; /* Center horizontally */

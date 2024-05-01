@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'Images/Short_icon.png'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Previous Bookings</title>
+    <link rel="stylesheet" href="{% static 'css/user-previous-bookings.css' %}">
+</head>
+<body>
+    <div class="content-wrapper">
+        <!-- Admin Side Navigation and other headers as needed -->
+
+        <div class="main-content">
+            <section class="bookings-section">
+                <h2>Previous Bookings</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Equipment Name</th>
+                            <th>Booking ID</th>
+                            <th>Borrowed Date</th>
+                            <th>Returned Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for booking in bookings %}
+                        <tr>
+                            <td>{{ booking.user.username }}</td>
+                            <td>{{ booking.equipment.name }}</td>
+                            <td>{{ booking.id }}</td>
+                            <td>{{ booking.start_date|date:"Y-m-d H:i" }}</td>
+                            <td>{{ booking.end_date|date:"Y-m-d H:i" }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr><td colspan="5">No previous bookings found.</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

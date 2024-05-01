@@ -51,6 +51,7 @@ button {
     cursor: pointer;
     border: none; /* Ensuring no border */
     border-radius: 2px;
+    margin-bottom: 20px;
 }
 
 .forgot a {

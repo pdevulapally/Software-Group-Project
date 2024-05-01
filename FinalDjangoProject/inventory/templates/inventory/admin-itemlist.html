@@ -24,22 +24,18 @@
                 <a href="{% url 'inventory:generate_reports'%}"><img src="{% static 'Images/Report.png' %}" alt=" Report Icon" class="report-icon"></a>
                 <li> <a href="{% url 'inventory:manage_users'%}" onclick="toggleNav(this)">Manage Users</a></li>
                 <a href="{% url 'inventory:manage_users'%}"><img src="{% static 'Images/Manage users.png' %}" alt="manage users report-icon" class="manageusers-icon"></a>
-                <li> <a href="#" onclick="toggleNav(this)">Previous Bookings</a></li>
-                <a href="#"><img src="{% static 'Images/PreviousBooking.png' %}" alt="Previous booking icon" class="previousbkng-icon"></a>
-                <li> <a href="#" onclick="toggleNav(this)">Manage</a></li>
-                <a href="#"><img src="{% static 'Images/Manage.png' %}" alt="Manage Icon" class="manage-icon"></a>
-                <li> <a href="Alerts.html" onclick="toggleNav(this)">Alerts</a></li>
-                <a href="Alerts.html"><img src="{% static 'Images/Alert.png' %}" alt=" Alerts Icon" class="alert-icon"></a>
+                <li><a href="{% url 'inventory:admin_alerts' %}" onclick="toggleNav(this)">Alerts</a></li>
+                <a href="{% url 'inventory:admin_alerts' %}"><img src="{% static 'Images/Alert.png' %}" alt="Alerts Icon" class="alert-icon"></a>
             </ul>
         </div>
         <!-- Logout Navigation -->
         <div class="Logout-nav">
             <ul>
-                <li><a href="#" onclick="toggleNav(this)">
-                    <img src="{% static 'Images/Logout.png' %}" alt="Logout Icon" class="Logout-icon"> Log Out
-                </a></li>
+                <li><a href="{% url 'inventory:logout' %}">Logout</a></li>
+                <a href=#><img src="{% static 'Images/Logout.png' %}" alt="Logout Icon" class="Logout-icon"></a>
             </ul>
         </div>
+    
         <!-- Westminster Logo -->
         <div class="westmnstr-logo">
             <a href="Dashboard.html">
@@ -49,10 +45,12 @@
         <!-- Top Bar Search and Profile -->
         <div class="top-bar">
             <div class="search-bar">
-                <form action="/action_page.php">
-                    <input type="text" placeholder="Search product, Device Type.." name="search">  
+                <form action="{% url 'inventory:admin_item_list' %}" method="GET">
+                    <input type="text" placeholder="Search product by name (case sensitive)" name="search">  
+                    <button type="submit">Search</button>
                 </form>
             </div>
+            
             <div class="dropdown">
                 <img src="{% static 'Images/DefaultUser.png' %}" alt="User Profile" class="user-profile">
                 <div class="dropdown-content">
@@ -67,37 +65,33 @@
         <div class="main-content">
             <!-- Equipment Section -->
             <div class="main-content">
+                
+
                 <section class="equipment-section">
                     <h2>Equipment</h2>
+                    <a href="{% url 'inventory:add_equipment' %}" class="add-item-button">Add Item</a>
                 <table>
                     <thead>
                         <tr>
-                            <th>Product</th>
-                            <th>Device Type</th>
-                            <th>Serial Number</th>
-                            <th>CPU</th>
                             <th>Status</th>
+                            <th>id</th>
                             <th>Details</th> <!-- Added details column -->
+                            <th>Update item</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for equipment in page_obj %}
                         <tr>
-                            <td>{{ equipment.id }}</td>
-                            <td>{{ equipment.device_type }}</td>
-                            <td>
-                                <!-- Making the serial number a clickable link to the equipment details -->
-                                <a>{{ equipment.serial_number }}</a>
-                            </td>
-                            <td>{{ equipment.cpu }}</td>
                             <td>{{ equipment.status }}</td>
+                            <td>{{ equipment.id }}</td>
+                            <td><a href="{% url 'inventory:equipment_details' equipment.id %}">{{ equipment.name }}</a></td>
+                            <td><a href="{% url 'inventory:update_equipment' equipment.id %}" class="update-button">Update</a></td>
                         </tr>
                         {% empty %}
-                        <tr>
-                            <td colspan="6">No equipment available.</td>
-                        </tr>
+                        <tr><td colspan="6">No equipment available.</td></tr>
                         {% endfor %}
                     </tbody>
+
                     
                 </table>
 

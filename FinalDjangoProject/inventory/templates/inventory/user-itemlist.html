@@ -20,8 +20,8 @@
                 <a href="#"><img src="{% static 'Images/Report.png'%}" alt=" Return Icon" class="return-icon"></a>
                 <li> <a href="Alerts.html" onclick="toggleNav(this)">Alerts</a></li>
                 <a href="Alerts.html"><img src="{% static 'Images/Alert.png'%}" alt=" Alerts Icon" class="alert-icon"></a>
-                <li> <a href="#" onclick="toggleNav(this)">Previous Bookings</a></li>
-                <a href="#"><img src="{% static 'Images/PreviousBooking.png' %}" alt="Previous booking icon" class="previousbkng-icon"></a>
+                <li> <a href="{% url 'inventory:user_previous_bookings' %}" onclick="toggleNav(this)">Previous Bookings</a></li>
+                <a href="{% url 'inventory:user_previous_bookings' %}"><img src="{% static 'Images/PreviousBooking.png' %}" alt="Previous booking icon" class="previousbkng-icon"></a>
             
         </div>
     </div>
@@ -56,9 +56,6 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Device Type</th>
-                        <th>Device Serial</th>
-                        <th>CPU</th>
                         <th>Availability</th>
                         <th>Details</th>
                     </tr>
@@ -66,9 +63,6 @@
                 <tbody>
                     {% for equipment in page_obj %}
                     <tr>
-                        <td>{{ equipment.device_type }}</td>
-                        <td>{{ equipment.device_serial }}</td>
-                        <td>{{ equipment.CPU }}</td>
                         <td>{{ equipment.status }}</td>
                         <td><a href="{% url 'inventory:equipment_details' equipment.id %}">{{ equipment.name }}</a></td>
                     </tr>

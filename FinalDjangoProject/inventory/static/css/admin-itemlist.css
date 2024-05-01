@@ -276,7 +276,7 @@ h1 {
   z-index: 2; /* Higher index to be above the ::after pseudo-element */
   background-color: rgba(255, 255, 255, 1); /* white background with opacity */
   margin-bottom: 10px;
-  width: 90%; /* Adjust as needed */
+  width: 60%; /* Adjust as needed */
   height: 80%;
   border-radius: 8px; /* Optional: adds rounded corners to the box */
   overflow-y: auto;

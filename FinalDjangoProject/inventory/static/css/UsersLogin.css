@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(0, 0, 0);
+    background-color: black;
     overflow: hidden;
 }
 
@@ -33,7 +33,7 @@ input[type=password] {
 }
 
 label,
-input[type="text"],
+input[type="email"],
 input[type="password"],
 input[type="submit"] {
     display: block;
@@ -104,7 +104,7 @@ label {
     .westmnstr-bars,
     .Login-para,
     label,
-    input[type="text"],
+    input[type="email"],
     input[type="password"],
     input[type="submit"],
     button,
@@ -148,4 +148,3 @@ label {
     }
 
 }
-

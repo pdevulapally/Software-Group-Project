@@ -20,10 +20,6 @@
                 <a href="{% url 'inventory:generate_reports' %}"><img src="{% static 'Images/Report.png' %}" alt="Report Icon" class="report-icon"></a>
                 <li><a href="{% url 'inventory:manage_users' %}" onclick="toggleNav(this)">Manage Users</a></li>
                 <a href="{% url 'inventory:manage_users' %}"><img src="{% static 'Images/Manage users.png' %}" alt="Manage users icon" class="manageusers-icon"></a>
-                <li><a href=# onclick="toggleNav(this)">Previous Bookings</a></li>
-                <a href=#><img src="{% static 'Images/PreviousBooking.png' %}" alt="Previous booking icon" class="previousbkng-icon"></a>
-                <li><a href=# onclick="toggleNav(this)">Manage</a></li>
-                <a href=#><img src="{% static 'Images/Manage.png' %}" alt="Manage Icon" class="manage-icon"></a>
                 <li><a href="{% url 'inventory:admin_alerts' %}" onclick="toggleNav(this)">Alerts</a></li>
                 <a href="{% url 'inventory:admin_alerts' %}"><img src="{% static 'Images/Alert.png' %}" alt="Alerts Icon" class="alert-icon"></a>
 
@@ -33,7 +29,7 @@
 
     <div class="Logout-nav">
         <ul>
-            <li><a href=# onclick="toggleNav(this)">Log Out</a></li>
+            <li><a href="{% url 'inventory:logout' %}">Logout</a></li>
             <a href=#><img src="{% static 'Images/Logout.png' %}" alt="Logout Icon" class="Logout-icon"></a>
         </ul>
     </div>
@@ -45,12 +41,6 @@
     <div class="top-bar">
     </div>
 
-    <div class="dropdown">
-        <img src="{% static 'images/DefaultUser.png' %}" alt="User-profile">
-        <div class="dropdown-content">
-            <a href="{% url 'inventory:admin_account_settings' %}">Account Settings</a>
-        </div>
-    </div>
     <div class="main-content-wrapper" style = "margin-top: 20px;">
         <h1>Alerts</h1>
         <div class="alert-content">

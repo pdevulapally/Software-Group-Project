@@ -12,8 +12,14 @@
     <div class="content-wrapper">
         <div class="Nav-sidebar">
             <ul class="Nav-bar">
-                <li><a href="{% url 'inventory:user_item_list' %}">Item List</a></li>
+                <!-- Check if the user is admin or superuser -->
+                {% if request.user.is_superuser or request.user.is_staff %}
+                    <li><a href="{% url 'inventory:admin_item_list' %}">Item List</a></li>
+                {% else %}
+                    <li><a href="{% url 'inventory:user_item_list' %}">Item List</a></li>
+                {% endif %}
                 <a href="#"><img src="{% static 'Images/itemlist.png'%}" alt="Item List Icon" class="item-icon"></a>
+            </ul>
         </div>
 
         <div class="Logout-nav">

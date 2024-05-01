@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add New Equipment</title>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/admin-addnew.css'%}">
+</head>
+<body>
+  <form method="post" action="{% url 'inventory:add_equipment' %}">
+    {% csrf_token %}
+    <h2>New Equipment</h2>
+
+    <div class="upload-container">
+      <label for="image" class="image-upload-container">
+        <span id="fileText"></span>
+        <div class="image-upload" id="imageUpload"></div>
+      </label>
+      <div class="browse-text">Click here to Upload</div>
+      <input type="file" id="image" name="image" accept="image/*" required onchange="updateFileName(this)">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Product Name:</label>
+      <input type="text" placeholder="Enter product name" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="serial_number">Serial Number:</label>
+      <input type="text" placeholder="Enter serial number" id="serial_number" name="serial_number" required>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <input type="text" placeholder="Select product category" id="category" name="category" required>
+    </div>
+
+    <div class="form-group">
+      <label for="cpu">CPU:</label>
+      <input type="text" placeholder="Enter CPU" id="cpu" name="cpu" required>
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <input type="text" placeholder="Enter status" id="status" name="status" required>
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Quantity:</label>
+      <input type="number" placeholder="Enter product quantity" id="quantity" name="quantity" required>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <input type="text" placeholder="Enter product location" id="location" name="location" required>
+    </div>
+
+    <div class="button-group">
+      <button type="submit">Add Equipment</button>
+      <button type="button" onclick="discardEquipment()">Discard</button>
+    </div>
+  </form>
+
+  {% if form.errors %}
+  <div class="alert alert-danger">
+      <strong>Error!</strong> Please correct the following errors:
+      {{ form.errors }}
+  </div>
+  {% endif %}
+
+  <script>
+    function discardEquipment() {
+      // Perform the discard action here
+      alert("Equipment discarded!");
+    }
+
+    function updateFileName(input) {
+      var fileName = input.files[0].name;
+      var fileText = document.getElementById("fileText");
+      fileText.textContent = fileName;
+    }
+  </script>
+</body>
+</html>

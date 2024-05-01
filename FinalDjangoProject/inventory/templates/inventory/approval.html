@@ -15,7 +15,7 @@
         <img src="{% static 'Images/clock.png' %}" alt="Admin approval waiting time" style="width: 315px; height: 315px;"> <!-- Reference to an image using static -->
     </div>
     <div class="backtologin">
-        <a href="UsersLogin.html"><img src="{% static 'Images/back.png' %}" alt="Back to Login">Back to Login</a> <!-- Using static tag for images -->
+        <a href="{% url 'inventory:custom_login' %}" img src="{% static 'Images/back.png' %}" alt="Back to Login">Back to Login</a> <!-- Using static tag for images -->
     </div>
 </body>
 </html>

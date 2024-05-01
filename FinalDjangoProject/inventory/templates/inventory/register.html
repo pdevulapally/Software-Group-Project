@@ -15,6 +15,13 @@
     <h2 class="Apply-h2">Apply for an account</h2>
     <form action="{% url 'inventory:register_account' %}" method="post">
       {% csrf_token %}
+      <div class="error-message" style = "color: white;">
+        {% if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
+    </div>
       <label for="FirstName">First Name:</label>
       <input type="text" name="first_name" id="FirstName" required placeholder="Enter your first name">
 
@@ -29,6 +36,13 @@
 
       <label for="Password">Login Password:</label>
       <input type="password" name="password" id="Password" required placeholder="Enter your password">
+
+      <div class="password-requirements" style = "color: white; border: 1px solid white; margin-top: 15px;">
+        <p>Your password can't be too similar to your other personal information.</p>
+        <p>Your password must contain at least 8 characters.</p>
+        <p>Your password can't be a commonly used password</p>
+        <p>Your password can't be entirely numeric</p>
+    </div>
 
       <label for="role">Role:</label>
       <select name="role" id="role">
@@ -45,6 +59,9 @@
         <label for="department">Department (for staff):</label>
         <input type="text" name="department" id="department" placeholder="Enter your department">
 
+        <label for="gdpr">I agree to comply with GDPR rules:</label>
+        <input type="checkbox" id="gdpr" name="gdpr">
+
 
 
       <button type="submit">Apply</button>
@@ -53,6 +70,8 @@
     <div class="westmnstr-bars2">
         <img src="{% static 'Images/Westminster Yellow Logo.png' %}" alt="westmnstr-bars2" style="width: 400px; height: 400px;">
     </div>
+    
+    
     
 </body>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Update Equipment</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/admin-addnew.css' %}"> <!-- Assuming reuse of the add equipment CSS -->
+</head>
+<body>
+    <form method="post" action="{% url 'inventory:update_equipment' equipment.id %}">
+        {% csrf_token %}
+        <h2>Update Equipment</h2>
+
+        <!-- Assume using a form similar to your add equipment, but fields populated with existing data -->
+        <div class="form-group">
+            <label for="name">Product Name:</label>
+            <input type="text" id="name" name="name" value="{{ equipment.name }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="serial_number">Serial Number:</label>
+            <input type="text" id="serial_number" name="serial_number" value="{{ equipment.serial_number }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <input type="text" id="category" name="category" value="{{ equipment.category }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="cpu">CPU:</label>
+            <input type="text" id="cpu" name="cpu" value="{{ equipment.cpu }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="Available" {% if equipment.status == 'Available' %}selected{% endif %}>Available</option>
+                <option value="Reserved" {% if equipment.status == 'Reserved' %}selected{% endif %}>Reserved</option>
+                <option value="Unavailable" {% if equipment.status == 'Unavailable' %}selected{% endif %}>Unavailable</option>
+            </select>
+        </div>
+
+        <button type="submit">Update Equipment</button>
+    </form>
+</body>
+</html>
